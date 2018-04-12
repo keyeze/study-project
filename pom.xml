@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <!-- groupId、artifactId、version 用来定位项目的基本坐标 -->
+    <groupId>com.chan.study</groupId>
+    <!--建议以项目名为前缀-->
+    <artifactId>study</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <!--打包方式会影响到生命周期和打包命令,默认为Jar-->
+    <!--这是父类项目,必须以POM方式打包..-->
+    <packaging>pom</packaging>
+    <!--classifier 用于定位有项目生产的附件如javadoc和sources,不能直接定义.-->
+    <!-- 显示给用户的项目名 -->
+    <name>Mr.Chan's Study Project</name>
+    <!--一级子项目-->
+    <modules><!--这是目录结构-->
+        <module>study-maven</module>
+        <!--<module>../xxxx</module>--><!--路径地址.可以如左设置-->
+    </modules>
+
+
+    <!--Maven 会根据这里的配置去获取依赖-->
+    <!--依赖获取顺序：-->
+    <dependencies>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <!--<version>4.12</version>-->
+            <!--依赖范围:test,compile,provided,runtime,system-->
+            <scope>test</scope>
+            <!--<systemPath></systemPath>-->
+        </dependency>
+    </dependencies>
+
+    <!--依赖归类,几种项目在同一groupId下,可以进行版本统一-->
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <spring.version>4.3.6.RELEASE</spring.version>
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+
+            <!--<dependency>-->
+            <!--<groupId>org.springframework</groupId>-->
+            <!--<artifactId>spring-core</artifactId>-->
+            <!--<version>4.3.6.RELEASE</version>-->
+            <!--依赖的类型用来定位packing, 大部分情况无需-->
+            <!--<type></type>-->
+            <!--依赖的范围:test,compile,provided,runtime,system,import-->
+            <!--
+            compile(默认):编译依赖范围,在Maven的编译、测试、运行三个classpath中都有效,如spring-core;
+            test:测试依赖范围,在Maven测试classpath中有效,如JUnit
+            provided:已提供依赖范围,在Maven编译和测试时有效,如servlet-api(运行环境由容器提供.)
+            runtime:运行时依赖范围.在Maven测试和运行时有效,在编译时无效,如JDBC驱动(主代码编译只需要JDK提供的接口就行了)
+            system:系统依赖范围.在provided依赖范围一致.使用system依赖时必须通过systemPath来显示的制定依赖文件的路径,此路径不依赖Maven,存在不可移植的问题.
+            import:导入依赖范围.该依赖不会对3中classpath产生影响.todo CtChan:在 8.3.3节中补完
+            -->
+            <!--<scope></scope>-->
+            <!--标记依赖是否可选--><!--使用JDK 的JDBC 接口时可选MySQL驱动包,需要依赖者显示依赖,不推荐使用-->
+            <!--<optional></optional>-->
+            <!--排除依赖传递--> <!--todo CtChan:5.9.1节补完-->
+            <!--<exclusions>-->
+            <!--<exclusion></exclusion>-->
+            <!--</exclusions>-->
+            <!--</dependency>-->
+            <!--scope 经典案例-->
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-core</artifactId>
+                <version>${spring.version}</version>
+                <scope>compile</scope>
+            </dependency>
+            <dependency>
+                <groupId>mysql</groupId>
+                <artifactId>mysql-connector-java</artifactId>
+                <version>5.1.40</version>
+                <scope>runtime</scope>
+            </dependency>
+            <dependency>
+                <groupId>junit</groupId>
+                <artifactId>junit</artifactId>
+                <version>4.12</version>
+                <scope>test</scope>
+            </dependency>
+            <dependency>
+                <groupId>javax.servlet</groupId>
+                <artifactId>servlet-api</artifactId>
+                <version>2.5</version>
+                <scope>provided</scope>
+            </dependency>
+            <dependency>
+                <groupId>com.oracle</groupId>
+                <artifactId>ojdbc7</artifactId>
+                <version>12.1.0.2</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <!--<configuration>-->
+                <!--<source>1.8</source>-->
+                <!--<target>1.8</target>-->
+                <!--</configuration>-->
+            </plugin>
+            <!--当packing 为 pom 时无法完成这个插件..-->
+            <!--<plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-shade-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <configuration>
+                            <transformers>
+                                <transfomer
+                                        implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
+                                    <mainClass>com.chan.CtChanMain</mainClass>
+                                </transfomer>
+                            </transformers>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>-->
+        </plugins>
+        <pluginManagement>
+            <plugins>
+                <!--编译插件:用来规定jdk内核版本等信息..-->
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-compiler-plugin</artifactId>
+                    <!--compile 插件 默认只支持ja va 1.3 为了让他支持更高级JDK需要手动写入一下内容-->
+                    <configuration>
+                        <source>1.8</source>
+                        <target>1.8</target>
+                    </configuration>
+                </plugin>
+
+                <!--
+                Maven 默认打包是生成的jar包无法直接运行,因为带有main方法的类信息不回被添加到
+                manifest 中.为了生成可执行的jar文件,需要使用 maven-shade-plugin
+                 -->
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-shade-plugin</artifactId>
+                    <version>1.2.1</version>
+                    <executions>
+                        <execution>
+                            <phase>package</phase>
+                            <goals>
+                                <goal>shade</goal>
+                            </goals>
+                            <!--
+                            <configuration>
+                                <transformers>
+                                    <transfomer
+                                            implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
+                                        <mainClass>com.chan.CtChanMain</mainClass>
+                                    </transfomer>
+                                </transformers>
+                            </configuration>
+                            -->
+                        </execution>
+                    </executions>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+    </build>
+    <!--中央仓库配置-->
+    <repositories>
+        <!--<repository>-->
+        <!--仓库唯一标识-->
+        <!--<id>central</id>-->
+        <!--仓库名称-->
+        <!--<name>Maven Repository Switchboard</name>-->
+        <!--仓库路径-->
+        <!--<url>http://repo1.maven.org/maven2/</url>-->
+        <!--仓库布局--><!--todo CtChan:6.2节补完-->
+        <!--<layout>default</layout>-->
+        <!--<releases>-->
+        <!--<enabled>false</enabled>-->
+        <!--<updatePolicy></updatePolicy>--><!--配置更新频率-->
+        <!--<checksumPolicy></checksumPolicy>--><!--检查策略warm(默认),fail,ignore-->
+        <!--</releases>-->
+        <!--<snapshots>-->
+        <!--<enabled>false</enabled>--><!--表示不下载快照版本--><!--todo CtChan:6.5节补完-->
+        <!--<updatePolicy></updatePolicy>-->
+        <!--<checksumPolicy></checksumPolicy>-->
+        <!--</snapshots>-->
+        <!--</repository>-->
+        <!--<repository>-->
+        <!--<id>ali-maven</id>-->
+        <!--<name>Alibaba Maven Repository</name>-->
+        <!--<url>http://maven.aliyun.com/nexus/content/groups/public/</url>-->
+        <!--<releases>-->
+        <!--<enabled>true</enabled>-->
+        <!--<updatePolicy></updatePolicy>-->
+        <!--<checksumPolicy></checksumPolicy>-->
+        <!--</releases>-->
+        <!--<snapshots>-->
+        <!--<enabled>false</enabled>-->
+        <!--</snapshots>-->
+        <!--<layout>default</layout>-->
+        <!--</repository>-->
+    </repositories>
+    <!--镜像,配置在setting中-->
+    <!--<mirrors>-->
+    <!--<mirror>-->
+    <!--<id>nexus-aliyun</id>--><!--唯一标识-->
+    <!--<mirrorOf>*</mirrorOf>--><!--表示是谁的镜像,可以配置多个(,*!)-->
+    <!--<name>Nexus aliyun</name>--><!--名称-->
+    <!--<url>http://maven.aliyun.com/nexus/content/groups/public</url>--><!--路径-->
+    <!--</mirror>-->
+    <!--</mirrors>-->
+
+    <!--发布的远程服务配置-->
+    <distributionManagement>
+        <repository><!--有时候发布需要认证,可以通过在setting中server方法中加入认证信息-->
+            <id>proj-releases</id><!--ID唯一标识-->
+            <name>Proj Release Repository</name><!--名字-->
+            <url></url><!--地址-->
+        </repository>
+        <snapshotRepository><!--快照版本发布地址-->
+            <id>proj-snapshots</id>
+            <name>Proj Snapshot Repository</name>
+            <url></url>
+        </snapshotRepository>
+    </distributionManagement>
+    <!--Maven 依赖构建顺序-->
+    <!--
+        1. 当依赖范围为System时,会在本地进行解析构件,否则;
+        2. 根据依赖坐标从本地仓库中搜索,否则;
+        3. 如果是显示的写入版本号则在远程库中搜索,否则;
+        4. 如果依赖RELEASE或者LATEST将多个线上版本和本地版本同一比较,获取最新RELEASE或LATEST版本,否则;
+        5. 如果依赖时SHAPSHOT,将多个线上版本和本地版本同一比较,获取最新SHAPSHOT版本,
+        6. 略...
+    -->
+
+    <!--Maven 生命周期 -->
+    <!--编译,测试,打包,部署-->
+    <!--
+        clean:pre-clean,clean,post-clean
+        default:validate,initialize,generate-sources,process-sources,compile,process-classes,generate-test-sources...
+        site
+    -->
+</project>
