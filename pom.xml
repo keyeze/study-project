@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <!-- groupId、artifactId、version 用来定位项目的基本坐标 -->
     <groupId>com.chan.study</groupId>
@@ -16,8 +17,8 @@
     <modules><!--这是目录结构-->
         <module>study-maven</module>
         <!--<module>../xxxx</module>--><!--路径地址.可以如左设置-->
-    <module>study-spring</module>
-  </modules>
+        <module>study-spring</module>
+    </modules>
 
 
     <!--Maven 会根据这里的配置去获取依赖-->
@@ -71,6 +72,16 @@
                 <artifactId>spring-core</artifactId>
                 <version>${spring.version}</version>
                 <scope>compile</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-test</artifactId>
+                <version>${spring.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-beans</artifactId>
+                <version>${spring.version}</version>
             </dependency>
             <dependency>
                 <groupId>mysql</groupId>

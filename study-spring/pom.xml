@@ -1,27 +1,49 @@
 <?xml version="1.0"?>
-<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <modelVersion>4.0.0</modelVersion>
-  <parent>
-    <groupId>com.chan.study</groupId>
-    <artifactId>study</artifactId>
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+         xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>com.chan.study</groupId>
+        <artifactId>study</artifactId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+    <!--<groupId>com.chan.study</groupId>-->
+    <artifactId>study-spring</artifactId>
     <version>1.0-SNAPSHOT</version>
-  </parent>
-  <!--<groupId>com.chan.study</groupId>-->
-  <artifactId>study-spring</artifactId>
-  <version>1.0-SNAPSHOT</version>
-  <packaging>war</packaging>
-  <name>study-spring Maven Webapp</name>
-  <url>http://maven.apache.org</url>
-    <!--spring中比较-->
-  <dependencies>
-    <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <scope>test</scope>
-    </dependency>
-  </dependencies>
-  <build>
-    <finalName>study-spring</finalName>
-  </build>
+    <packaging>war</packaging>
+    <name>study-spring Maven Webapp</name>
+    <url>http://maven.apache.org</url>
+    <!--
+      spring中部分成员
+        Spring IoC
+        Spring AOP
+        Spring MVC
+        Spring JDBC
+        Spring 事务处理
+        Spring 远程调用
+        Spring 应用
+    -->
+    <dependencies>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-test</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-core</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-beans</artifactId>
+        </dependency>
+    </dependencies>
+    <build>
+        <finalName>study-spring</finalName>
+    </build>
 </project>
