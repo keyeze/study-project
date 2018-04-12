@@ -13,11 +13,11 @@
   <packaging>war</packaging>
   <name>study-spring Maven Webapp</name>
   <url>http://maven.apache.org</url>
+    <!--spring中比较-->
   <dependencies>
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
-      <version>3.8.1</version>
       <scope>test</scope>
     </dependency>
   </dependencies>
