@@ -42,8 +42,29 @@
             <groupId>org.springframework</groupId>
             <artifactId>spring-beans</artifactId>
         </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context</artifactId>
+        </dependency>
     </dependencies>
     <build>
         <finalName>study-spring</finalName>
     </build>
+    <!--<profiles>-->
+    <!--<profile>-->
+    <!--<id>dev</id>-->
+    <!--<properties>-->
+    <!--<build.profile.id>dev</build.profile.id>-->
+    <!--</properties>-->
+    <!--<activation>-->
+    <!--<activeByDefault>true</activeByDefault>-->
+    <!--</activation>-->
+    <!--</profile>-->
+    <!--<profile>-->
+    <!--<id>prod</id>-->
+    <!--<properties>-->
+    <!--<build.profile.id>prod</build.profile.id>-->
+    <!--</properties>-->
+    <!--</profile>-->
+    <!--</profiles>-->
 </project>
