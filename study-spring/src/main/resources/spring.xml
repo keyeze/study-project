@@ -7,22 +7,11 @@
 
     <context:component-scan base-package="com.chan"/>
 
-    <beans>
-        <context:property-placeholder
-                location="classpath*:common/*.properties, classpath*:dev/*.properties"/>
-    </beans>
-
-    <!-- 测试环境配置文件 -->
-    <beans profile="test">
-        <context:property-placeholder
-                location="classpath*:common/*.properties, classpath*:test/*.properties"/>
-    </beans>
-
-    <!-- 生产环境配置文件 -->
-    <beans profile="prod">
-        <context:property-placeholder
-                location="classpath*:common/*.properties, classpath*:prod/*.properties"/>
-    </beans>
-
+    <context:property-placeholder
+            location="classpath*:common/*.properties"/>
+    <bean id="demoBean" class="com.chan.study.bean.DemoBean">
+        <property name="name" value="CtChanTestDemo"/>
+        <property name="id" value="10086"/>
+    </bean>
 
 </beans>
