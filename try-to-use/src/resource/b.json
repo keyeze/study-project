@@ -1,0 +1,27 @@
+{
+  "parameter": {
+    "area": "620000",
+    "birthday": "1994-08-11",
+    "cardNo": "350122199408110815",
+    "cardType": "120001",
+    "code": "1003",
+    "email": "keyeze@126.com",
+    "insBeginDate": "2018-05-05 00:00:00",
+    "insEndDate": "2019-05-04 23:59:59",
+    "insuredBirthday": "1994-08-11",
+    "insuredCardNo": "350122199408110815",
+    "insuredCardType": "120001",
+    "insuredName": "陈祖强",
+    "insuredRelationship": "601005",
+    "mobile": "15959028475",
+    "name": "陈祖强",
+    "socialSecFlag": "Y"
+  },
+  "planId": "23",
+  "userCode": "SSHZ-HB-0001",
+  "option": {
+    "amount": "300",
+    "social": "1",
+    "day": "1"
+  }
+}

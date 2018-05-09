@@ -18,6 +18,7 @@
         <module>study-maven</module>
         <!--<module>../xxxx</module>--><!--路径地址.可以如左设置-->
         <module>study-spring</module>
+        <module>try-to-use</module>
     </modules>
 
 
@@ -37,7 +38,7 @@
     <!--依赖归类,几种项目在同一groupId下,可以进行版本统一-->
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <spring.version>4.3.8.RELEASE</spring.version>
+        <spring.version>5.0.5.RELEASE</spring.version>
     </properties>
 
     <dependencyManagement>
@@ -89,6 +90,17 @@
                 <version>${spring.version}</version>
             </dependency>
             <dependency>
+                <groupId>org.springframework.data</groupId>
+                <artifactId>spring-data-redis</artifactId>
+                <version>2.0.6.RELEASE</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-context-indexer</artifactId>
+                <optional>true</optional>
+                <version>${spring.version}</version>
+            </dependency>
+            <dependency>
                 <groupId>mysql</groupId>
                 <artifactId>mysql-connector-java</artifactId>
                 <version>5.1.40</version>
@@ -110,6 +122,21 @@
                 <groupId>com.oracle</groupId>
                 <artifactId>ojdbc7</artifactId>
                 <version>12.1.0.2</version>
+            </dependency>
+            <dependency>
+                <groupId>commons-codec</groupId>
+                <artifactId>commons-codec</artifactId>
+                <version>1.9</version>
+            </dependency>
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>fastjson</artifactId>
+                <version>1.2.9</version>
+            </dependency>
+            <dependency>
+                <groupId>commons-lang</groupId>
+                <artifactId>commons-lang</artifactId>
+                <version>2.6</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
