@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <!-- groupId、artifactId、version 用来定位项目的基本坐标 -->
     <groupId>com.chan.study</groupId>
@@ -19,7 +18,8 @@
         <!--<module>../xxxx</module>--><!--路径地址.可以如左设置-->
         <module>study-spring</module>
         <module>try-to-use</module>
-    </modules>
+    <module>study-spring-boot-rest-example</module>
+  </modules>
 
 
     <!--Maven 会根据这里的配置去获取依赖-->

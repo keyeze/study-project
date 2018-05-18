@@ -1,122 +1,26 @@
 {
-  "formData": "{\"totalPremium\":\"125\",\"totalAmount\":\"2000000\",\"insBeginDate\":\"2018-05-08\",\"insEndDate\":\"2019-05-07\",\"name\":\"耿怜雪\",\"email\":\"keyeze@126.com\",\"cardType\":\"120001\",\"cardNo\":\"510811199204177400\",\"birthday\":\"1992-04-17\",\"mobile\":\"15959028475\",\"area\":\"630000\",\"insuredRelationship\":\"601005\",\"insuredName\":\"耿怜雪\",\"insuredCardType\":\"120001\",\"insuredCardNo\":\"510811199204177400\",\"insuredBirthday\":\"1992-04-17\",\"socialSecFlag\":\"Y\",\"code\":\"1004\"}",
-  "detailsData": [
-    {
-      "lable": "保险信息",
-      "insureBrief": [
-        {
-          "title": "总保费",
-          "info": "125"
-        },
-        {
-          "title": "总保额",
-          "info": "2000000"
-        },
-        {
-          "title": "投保日期",
-          "info": "2018-05-07 14:25:19"
-        },
-        {
-          "title": "起保日期",
-          "info": "2018-05-08 00:00:00"
-        },
-        {
-          "title": "终保日期",
-          "info": "2019-05-07 23:59:59"
-        },
-        {
-          "title": "投保份数",
-          "info": "1"
-        }
-      ]
-    },
-    {
-      "lable": "投保人信息",
-      "insureBrief": [
-        {
-          "title": "投保人姓名",
-          "info": "耿怜雪"
-        },
-        {
-          "title": "投保人邮箱",
-          "info": "keyeze@126.com"
-        },
-        {
-          "title": "投保人证件类型",
-          "info": "身份证"
-        },
-        {
-          "title": "投保人证件号",
-          "info": "510811199204177400"
-        },
-        {
-          "title": "投保人生日",
-          "info": "1992-04-17"
-        },
-        {
-          "title": "投保人电话",
-          "info": "15959028475"
-        }
-      ]
-    },
-    {
-      "lable": "被保人信息",
-      "insureBrief": [
-        {
-          "title": "与投保人关系",
-          "info": "本人"
-        },
-        {
-          "title": "被保人姓名",
-          "info": "耿怜雪"
-        },
-        {
-          "title": "被保人证件类型",
-          "info": "身份证"
-        },
-        {
-          "title": "被保人证件号",
-          "info": "510811199204177400"
-        },
-        {
-          "title": "被保人生日",
-          "info": "1992-04-17"
-        }
-      ]
-    }
-  ],
+  "result": false,
   "amount": 0.01,
-  "insuredData": "{\"orderId\":\"d46c70c538c8480abaf53816f9265fed\",\"totalPremium\":\"12500\",\"totalAmount\":\"200000000\",\"appTm\":\"2018-05-07 14:25:19\",\"insBeginDate\":\"2018-05-08 00:00:00\",\"insEndDate\":\"2019-05-07 23:59:59\",\"applyNum\":\"1\",\"code\":\"1004\"}",
-  "briefData": [
-    {
-      "title": "被保人姓名",
-      "info": "耿怜雪"
-    },
-    {
-      "title": "保额",
-      "info": "2000000"
-    }
-  ],
-  "personInfo": {
-    "holder": {
-      "orgType": "1",
-      "name": "耿怜雪",
-      "certiType": "1",
-      "certiCode": "510811199204177400",
-      "birthday": "Dec 4, 1991 12:00:00 AM",
-      "mobile": "15959028475",
-      "email": "keyeze@126.com"
-    },
-    "insureList": [
-      {
-        "orgType": "1",
-        "relation": "5",
-        "name": "耿怜雪",
-        "certiCode": "510811199204177400",
-        "birthday": "Dec 4, 1991 12:00:00 AM"
-      }
-    ]
-  },
-  "insureAmount": 2000000,
-  "isNotOne": false
+  "orderId": "8cd6a5a40eb747c58261e007d5d62b17",
+  "messages": "投保接口调用失败",
+  "formData": {
+    "birthday": "1971-06-29",
+    "area": "350000",
+    "socialSecFlag": "Y",
+    "code": "1008",
+    "insuredCardNo": "330783197106297525",
+    "cardType": "120001",
+    "mobile": "15959028475",
+    "totalPremium": "333",
+    "insEndDate": "2019-05-10",
+    "cardNo": "330783197106297525",
+    "totalAmount": "2000000",
+    "insuredCardType": "120001",
+    "name": "高迎南",
+    "insuredBirthday": "1971-06-29",
+    "insuredRelationship": "601005",
+    "insuredName": "高迎南",
+    "insBeginDate": "2018-05-11",
+    "email": "keyeze@126.com"
+  }
 }
