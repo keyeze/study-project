@@ -1,0 +1,10 @@
+{
+  "baseInfo": {
+    "type": "P",
+    "orderId": 129027887180283904,
+    "payTime": "2018-06-05 17:11:23",
+    "orderStatus": 2
+  },
+  "sign": "123",
+  "signType": "321"
+}

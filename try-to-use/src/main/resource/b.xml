@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Packet>
+    <Head>
+        <RequestID>123985791981453312</RequestID>
+        <RequestType>0002</RequestType>
+        <User>AC600002_01</User>
+        <Password>bc0TYXab4UjcZiOtX9XpdQ</Password>
+    </Head>
+    <Body>
+        <Policy>
+            <PlanCode>BBAIAP(2017)</PlanCode>
+            <IssueDate>20180522185513</IssueDate>
+            <EffectiveDate>20180527000000</EffectiveDate>
+            <ExpireDate>20190526235959</ExpireDate>
+            <GroupSize>1</GroupSize>
+            <PremiumCalType>1</PremiumCalType>
+            <TotalPremium>69.00</TotalPremium>
+            <AgencyPolicyRef>123985791981453312</AgencyPolicyRef>
+        </Policy>
+        <Agency>
+            <AgencyCode>AC600002</AgencyCode>
+        </Agency>
+        <PolicyHolder>
+            <PolicyHolderType>I</PolicyHolderType>
+            <PolicyHolderName>陈祖强</PolicyHolderName>
+            <PHIdType>1</PHIdType>
+            <PHIdNumber>350122199408110815</PHIdNumber>
+            <PHTelephone>15959028475</PHTelephone>
+        </PolicyHolder>
+        <InsuredList>
+            <Insured>
+                <InsuredId>1</InsuredId>
+                <InsuredType>2</InsuredType>
+                <InsuredName>陈祖强</InsuredName>
+                <IdType>3</IdType>
+                <IdNumber>A999999</IdNumber>
+                <BirthDate>20170811000000</BirthDate>
+                <policyholderInsuredRelation>03</policyholderInsuredRelation>
+            </Insured>
+        </InsuredList>
+    </Body>
+</Packet>

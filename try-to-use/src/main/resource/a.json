@@ -1,0 +1,10 @@
+{
+  "baseInfo": {
+    "orderStatus": 4,
+    "updateTime": "2018-06-11 14:50:07",
+    "type": "P",
+    "orderId": 130099787063099392
+  },
+  "sign": "OCG7xjsczCtvCjYEijlk8hvqQzrsJ2pf/OP7mFyZOOUwk+6OGvr+xrHoFLKoGcBs4ZOrV0dF2VaUOjlucLaGNaVySWQsBbi8qHNIO5rhfKGVNEdQGfJQJTeF72ltoNNEg0rDZcoFfNJX7LhpzeAuO+Tw6U8u4B/RcQE4dF51i4w=",
+  "signType": "SHA1WithRSA"
+}

@@ -40,6 +40,5 @@ public class AnXinApiHelper implements ApiHelper {
 //        String str = "{\"parameter\":{\"area\":\"310000\",\"birthday\":\"1947-05-12\",\"cardNo\":\"44030519470512001X\",\"cardType\":\"120001\",\"code\":\"1012\",\"email\":\"15959028475@qq.com\",\"insBeginDate\":\"2018-05-12\",\"insEndDate\":\"2019-05-11\",\"insuredBirthday\":\"1947-05-12\",\"insuredCardNo\":\"44030519470512001X\",\"insuredCardType\":\"120001\",\"insuredName\":\"陈祖强\",\"insuredRelationship\":\"601005\",\"mobile\":\"15959028475\",\"name\":\"陈祖强\",\"socialSecFlag\":\"Y\"},\"planId\":\"23\",\"userCode\":\"SSHZ-HB-0001\",\"option\":{\"amount\":\"300\",\"social\":\"1\",\"day\":\"1\"}}";
 
 
-
     }
 }
