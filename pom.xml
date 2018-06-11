@@ -3,6 +3,12 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <!-- Your own application should inherit from spring-boot-starter-parent -->
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <groupId>org.springframework.boot</groupId>
+        <version>1.1.4.RELEASE</version>
+    </parent>
     <!-- groupId、artifactId、version 用来定位项目的基本坐标 -->
     <groupId>com.chan.study</groupId>
     <!--建议以项目名为前缀-->
@@ -19,6 +25,7 @@
         <module>study-maven</module>
         <!--<module>../xxxx</module>--><!--路径地址.可以如左设置-->
         <module>study-spring</module>
+        <module>study-spring-boot</module>
     </modules>
 
 
@@ -159,6 +166,12 @@
                 <groupId>org.hibernate</groupId>
                 <artifactId>hibernate-validator</artifactId>
                 <version>5.3.6.Final</version>
+            </dependency>
+            <!--简化开发-->
+            <dependency>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <version>1.16.8</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
