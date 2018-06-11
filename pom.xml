@@ -3,12 +3,7 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <parent>
-        <!-- Your own application should inherit from spring-boot-starter-parent -->
-        <artifactId>spring-boot-starter-parent</artifactId>
-        <groupId>org.springframework.boot</groupId>
-        <version>1.1.4.RELEASE</version>
-    </parent>
+
     <!-- groupId、artifactId、version 用来定位项目的基本坐标 -->
     <groupId>com.chan.study</groupId>
     <!--建议以项目名为前缀-->
