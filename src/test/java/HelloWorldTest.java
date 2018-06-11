@@ -7,7 +7,7 @@ public class HelloWorldTest {
     }
 
     @Test
-    public void test(){
+    public void test() {
         System.out.println("Running the Second!");
     }
 }

@@ -1,8 +1,8 @@
 import com.chan.study.bean.DemoBean;
+import com.chan.study.bean.OfflineBean;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.BeanFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
@@ -14,10 +14,14 @@ import java.util.Optional;
 @ContextConfiguration(locations = {"classpath:spring.xml"})
 @RunWith(SpringJUnit4ClassRunner.class)
 public class CtChanDemo {
-    @Autowired
-    private DemoBean demoBean;
     @Resource
     private BeanFactory beanFactory;
+
+    @Resource
+    private OfflineBean offlineBeanInFullConfiguration;
+
+    @Resource
+    private OfflineBean offlineBeanLite;
 
     @Test
     public void fun() {
@@ -42,4 +46,10 @@ public class CtChanDemo {
         System.out.println(URLEncoder.encode("http://10.40.2.115:8080/weChat/publicNumber/openId", "utf-8"));
     }
 
+
+    @Test
+    public void differAtBeanInAtConfirgurationAndAtCompment() {
+        System.out.println(offlineBeanInFullConfiguration);
+        System.out.println(offlineBeanLite);
+    }
 }

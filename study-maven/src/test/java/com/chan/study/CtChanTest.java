@@ -8,7 +8,7 @@ import org.junit.Test;
 public class CtChanTest {
 
     @Test
-    public void fun(){
+    public void fun() {
         System.out.println("scope test!");
     }
 }

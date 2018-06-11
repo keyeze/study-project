@@ -1,0 +1,37 @@
+{
+  "result": true,
+  "code": 0,
+  "message": {
+    "result": true,
+    "amount": 0.01,
+    "orderId": "7f768bcaf0544a3db18e4447aed155f5",
+    "policyList": [
+      {
+        "policyNumber": "S100000007P002181006881470",
+        "startTime": "2018-05-07 00:00:00",
+        "policyFile": "https://antx11.95303.com/com.isoftstone.iics.www/downloadChannelPolicys?sign=4c766ed7767d78022805683886caee82&policyNo=S100000007P002181006881470",
+        "endTime": "2019-05-06 23:59:59"
+      }
+    ],
+    "formData": {
+      "birthday": "1998-05-08",
+      "area": "620000",
+      "socialSecFlag": "Y",
+      "code": "1002",
+      "insuredCardNo": "320301199805085880",
+      "cardType": "120001",
+      "mobile": "15959028475",
+      "totalPremium": "50",
+      "insEndDate": "2019-05-06",
+      "cardNo": "320301199805085880",
+      "totalAmount": "2000000",
+      "insuredCardType": "120001",
+      "name": "孙笑槐",
+      "insuredBirthday": "1998-05-08",
+      "insuredRelationship": "601005",
+      "insuredName": "孙笑槐",
+      "insBeginDate": "2018-05-07",
+      "email": "keyeze@126.com"
+    }
+  }
+}

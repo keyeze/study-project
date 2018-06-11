@@ -1,6 +1,8 @@
 package com.chan.study.bean;
 
 
+import javax.annotation.PostConstruct;
+
 public class DemoBean {
     private String id;
     private String name;
@@ -30,5 +32,10 @@ public class DemoBean {
                 "id='" + id + '\'' +
                 ", name='" + name + '\'' +
                 '}';
+    }
+
+    @PostConstruct
+    public void init() {
+        System.out.println(this + " DemoBean is inited !!!");
     }
 }

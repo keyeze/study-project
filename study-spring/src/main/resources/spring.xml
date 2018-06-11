@@ -9,7 +9,7 @@
 
     <context:property-placeholder
             location="classpath*:common/*.properties"/>
-    <bean id="demoBean" class="com.chan.study.bean.DemoBean">
+    <bean id="demoBean" class="com.chan.study.bean.DemoBean" scope="prototype">
         <property name="name" value="CtChanTestDemo"/>
         <property name="id" value="10086"/>
     </bean>
