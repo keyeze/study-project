@@ -21,6 +21,8 @@
         <!--<module>../xxxx</module>--><!--路径地址.可以如左设置-->
         <module>study-spring</module>
         <module>study-spring-boot</module>
+        <module>study-jvm</module>
+        <module>try-to-use</module>
     </modules>
 
 

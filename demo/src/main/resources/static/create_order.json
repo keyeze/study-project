@@ -1,0 +1,17 @@
+{
+  "baseInfo": {
+    "type": "P",
+    "orderId": 130076217377292288,
+    "createTime": "2018-06-08 14:16:23",
+    "outerUserId": "313213213",
+    "orderStatus": 1,
+    "amount": 160000,
+    "productId": "10100002",
+    "productName": "熊宝保少儿保障保险",
+    "subProductId": 1010000201,
+    "subProductName": "熊宝保少儿保障保险",
+    "updateTime": "2018-06-08 14:16:23"
+  },
+  "sign": "123",
+  "signType": "321"
+}
