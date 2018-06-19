@@ -21,7 +21,7 @@ public class TestController {
     private static String privateKey = "MIICdgIBADANBgkqhkiG9w0BAQEFAASCAmAwggJcAgEAAoGBAIAx9/AwUzYJbdYDy2KyA6kPUKfHDjvbZ8+UpRbWwA0GM2AUmTMYv7L/3jjX0QW3VcWaq0OfDoQJLwvFgvthJzVNVsYKBP4kPgN8phMTEG1b8ZUDli72Vv1or2al514hUmWhTkirizNn4I0HXcN1KsucmiDMzP3gcrB+JIthkFWhAgMBAAECgYAd5YlhJqQBUimfY7snBUT9RGkW98FGDGEldBEcRnD7mJqaqbMgy4DJigqVTx+cKamDMBMI7itAd7PVFvb5EStHWIaI/5gxJSUyZnpLSZBfo84PJdVtXnAbhZ3NJxs7poBbWb8/kLlVfxjk0vXiADq5A1nfIns9MjvuW0ESkpzXAQJBAOEaBoI4tIuQgH4V1x0t7fur2gOPrGf0ZuJRCx10LMFivEI2FIl256ZH3nYF/48btpBXg1JI8Za7pHz7kKREDTkCQQCRyrEXFk7d6icUDuXv7XcQt5PxJGeO5Xg2fA7wW5A3ETJY9EVI/Xq2+H2YMsQhm7DIrYCp2ACJ4WE9Zqd3S3OpAkAYPgdJavX2ud88tPlvyQyCOCXIkGaO44FZCkVaLLLNOObxcoWPsGCORdstdsPpE6D7tpEMAZMTGq5CT41qQ3HxAkALJkksztPxPLsIWatUEgENEj0KMBKLZxkucYZi812wGGyVSPkTf+8mlxJj1V4Sg+mdL0ertY00/juFipg8E1UhAkEAh08Qs76MFptcD5xnj9VK8/jJLqRaaTwGBsyeoS5A9ShXCPKZLIQtSxDS0I4XXjVvsneKywaKAzjYD+D6ORGPVA==";
 
     @PostMapping("/notify")
-    public void testNotify(@RequestBody String context) throws Exception {
+    public String testNotify(@RequestBody String context) throws Exception {
         String jsonStr = RSAEncryptUtils
                 .decryptByPrivateKey(Base64Utils.decode(context), privateKey);
         System.out.println(jsonStr);
@@ -42,16 +42,19 @@ public class TestController {
         boolean result = SignUtils.verify(data, publicKey, signStr,
                 SignUtils.SignatureAlgorithm.SHA1_WITH_RSA);
         if (!result) {
-            return;
+            System.out.println("FAIL");
+            return "FAIL";
         }
+        System.out.println("SUCCESS");
         System.out.println(jsonStr);
+        return "SUCCESS";
     }
 
     @PostMapping("/notify/{key}")
-    public void testNotify(@RequestBody String context, @PathVariable("key") String key)
+    public String testNotify(@RequestBody String context, @PathVariable("key") String key)
             throws Exception {
         System.out.println(key);
-        testNotify(context);
+        return testNotify(context);
     }
 
     public long getTime() {
