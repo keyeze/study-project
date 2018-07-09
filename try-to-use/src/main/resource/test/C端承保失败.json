@@ -1,0 +1,10 @@
+{
+  "baseInfo": {
+    "orderId": 129010668933218304,
+    "orderStatus": 6,
+    "failReason": "谢小宝年龄小于60天，不能投保！",
+    "updateTime": "2018-07-04 18:20:08",
+    "type": "P"
+  },
+  "type": "P"
+}

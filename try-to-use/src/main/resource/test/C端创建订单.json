@@ -1,0 +1,19 @@
+{
+  "baseInfo": {
+    "amount": 160000,
+    "agentOuterName": "朱海冰",
+    "productId": "10100002",
+    "orderId": 126166548384579584,
+    "orderStatus": 1,
+    "updateTime": "2018-07-04 18:20:08",
+    "type": "P",
+    "productName": "熊宝保少儿保障保险",
+    "agentOuterPhone": "13662236074",
+    "agentOuterUserId": "122222223",
+    "createTime": "2018-05-28 19:20:46",
+    "subProductName": "熊宝保少儿保障保险",
+    "insurCompany": "安联",
+    "subProductId": 1010000201
+  },
+  "type": "P"
+}

@@ -1,0 +1,13 @@
+eureka:
+  instance:
+    hostname: localhost
+    appname: eureka
+  client:
+#   是否注册自己
+    register-with-eureka: false
+#   是否检索服务,(因为是注册中心,不需要依赖其他服务)
+    fetch-registry: false
+    service-url:
+        default-zone: http://${eureka.instance.hostname}:${server.port}/${eureka.instance.appname}/
+server:
+  port: 9980

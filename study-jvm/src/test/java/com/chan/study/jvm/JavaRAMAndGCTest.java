@@ -72,14 +72,14 @@ public class JavaRAMAndGCTest {
      * 当进入或者即将进入 Survivor的对象空间大于空间一半时,所有与该年龄相同或者大的对象,提前进入老年区
      */
     @Test
-    public void testTenuringThresholdForMomentMemoryLessThanHalfOfSurvivor() {
+    public void testTenuringThresholdForMomentMemoryLessThanHalfOfSurvivor() throws InterruptedException {
         System.gc();
         byte[] allocation, allocation2;
         allocation = new byte[_1MB / 4];
-        for (int i = 14 * 1024; i > 0; i--) {
-            allocation2 = new byte[3 * _1MB / 1024];
+        while (true) {
+            allocation2 = new byte[3 * _1MB / 5];
+            Thread.sleep(1000);
         }
-        allocation2 = null;
 
     }
 

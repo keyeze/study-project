@@ -1,5 +1,62 @@
 {
-  "result": true,
-  "code": 0,
-  "message": "{\"orderId\":\"7f768bcaf0544a3db18e4447aed155f5\",\"formData\":\"{\\\"totalPremium\\\":\\\"50\\\",\\\"totalAmount\\\":\\\"2000000\\\",\\\"insBeginDate\\\":\\\"2018-05-07\\\",\\\"insEndDate\\\":\\\"2019-05-06\\\",\\\"name\\\":\\\"孙笑槐\\\",\\\"email\\\":\\\"keyeze@126.com\\\",\\\"cardType\\\":\\\"120001\\\",\\\"cardNo\\\":\\\"320301199805085880\\\",\\\"birthday\\\":\\\"1998-05-08\\\",\\\"mobile\\\":\\\"15959028475\\\",\\\"area\\\":\\\"620000\\\",\\\"insuredRelationship\\\":\\\"601005\\\",\\\"insuredName\\\":\\\"孙笑槐\\\",\\\"insuredCardType\\\":\\\"120001\\\",\\\"insuredCardNo\\\":\\\"320301199805085880\\\",\\\"insuredBirthday\\\":\\\"1998-05-08\\\",\\\"socialSecFlag\\\":\\\"Y\\\",\\\"code\\\":\\\"1002\\\"}\",\"policyList\":[{\"policyNumber\":\"S100000007P002181006881470\",\"policyFile\":\"https://antx11.95303.com/com.isoftstone.iics.www/downloadChannelPolicys?sign\\u003d4c766ed7767d78022805683886caee82\\u0026policyNo\\u003dS100000007P002181006881470\",\"startTime\":\"2018-05-07 00:00:00\",\"endTime\":\"2019-05-06 23:59:59\"}],\"amount\":0.01,\"addition\":\"118503739240742912\",\"result\":true}"
+  "policy": {
+    "applicantName": "手12动123",
+    "insureComId": 168,
+    "insureCom": "安联财产保险（中国）有限公司",
+    "agentId": "13143679946461184",
+    "insureAgent": "周蒙蒙",
+    "isEffective": 1,
+    "policyId": "3123123123121",
+    "insuredName": "所属12",
+    "insureType": "个人意外险",
+    "insureCode": "[\"非车险\",\"意外险\",\"个人意外险\"]",
+    "insureFee": 22222,
+    "agentPhoneNo": "15030616580",
+    "orgName": "产品部",
+    "outRate": "",
+    "inRate": "",
+    "insureAmount": null,
+    "endTime": "",
+    "startTime": "",
+    "insureAgreement": "所属",
+    "id": 772,
+    "insureStarttime": "",
+    "insureEndtime": "",
+    "type": 1,
+    "remark": "21321",
+    "commissionOut": "444.44",
+    "payeeName": "三十岁",
+    "payeeIdcardNo": "330304199110128726",
+    "bankAccount": "6006097806552332",
+    "bankName": "订单",
+    "version": "dd339583999447324"
+  },
+  "commissionSettle": {
+    "id": 339,
+    "policyKey": "772",
+    "agentPhoneNo": "15030616580",
+    "orgName": "产品部",
+    "payeeName": "三十岁",
+    "agentId": "13143679946461184",
+    "insureAgent": "周蒙蒙",
+    "payeeIdcardNo": "330304199110128726",
+    "bankAccount": "6006097806552332",
+    "bankName": "订单",
+    "outRate": 2,
+    "commissionOut": "444.44"
+  },
+  "images": [
+    {
+      "id": 829,
+      "imgKey": "insure/pims/3123123123121/99213699bd204537b65de03701ce1544",
+      "policyKey": 772,
+      "imageContent": "http://ory035j8z.bkt.clouddn.com/insure/pims/3123123123121/99213699bd204537b65de03701ce1544?e=1530343138&token=pkhqEa4577QheNN7louy_ZZDYaH9sQx0XVEIsn1Y:nkzEZln1Es0cm4VO6E0R4wmuN98=",
+      "imageMode": null,
+      "imageUrl": "http://ory035j8z.bkt.clouddn.com/insure/pims/3123123123121/99213699bd204537b65de03701ce1544?e=1530343138&token=pkhqEa4577QheNN7louy_ZZDYaH9sQx0XVEIsn1Y:nkzEZln1Es0cm4VO6E0R4wmuN98="
+    },
+    {
+      "imageContent": "/9j/4AAQSkZJRgABAQEASABIAAD/2wBDAAkGBwgHBgkIBwgKCgkLDRYPDQwMDRsUFRAWIB0iIiAdHx8kKDQsJCYxJx8fLT0tMTU3Ojo6Iys/RD84QzQ5Ojf/2wBDAQoKCg0MDRoPDxo3JR8lNzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzf/wAARCAQ4B4ADASIAAhEBAxEB/8QAHAABAQEBAQEBAQEAAAAAAAAAAAECAwQFBgcI/8QATBAAAgIBAgQDBQUGAwcCBQEJAAECEQMEIRIxQVEFYXETIjKBkQZCUqGxFCNicsHRBzPhFSRDU4KS8KKyFjRjwvElRHOT0uJUdKOz/8QAGAEBAQEBAQAAAAAAAAAAAAAAAAECAwT/xAAlEQEBAQEAAgMBAQACAwEBAAAAARECITEDEkFRIjJxE0JhI4H/2gAMAwEAAhEDEQA/AP5FklfU80+Z1bOb3Z6qjmSjbRKMUZSLRQRAvzM2RsDVksy2Zb7k1W3Iy5GLFk0a4iWZBnVVtiyAC36iyIAVMERQDZLAAfUbgAPmy/MgYFsb+ZABbYsgA1b7jciDKKmW667mTSXeyi3a62Swot1tu+Rm9wjTbom9WLNxnyt0ujrkBzZLOmXd3S9VyZz9CVT6lTIFzINgrVdU/QhtC+7JZ0SuKS4bbrlucyUEmx0LDns6Kuq6dRgzW3M1w0nv0MpbG4u0IObfIqt9zUFub/USDKTNItFSNIItgy2UGzDZWZZlUsqshV0AGkKCKKEAABAVFF+ZAFUfUhQKLIVFRbBCoAVMUWigmV7mS2UStuZLZoIyNXtzNJp171I5JK9+QaXQDvunQs5cU1HyNJyXxbp9S6N2aRhbmkBovzIgUWzSMmkAprdMbvqbSFAaT8ynNOhKdfdb+YHWw2ed5ZvlS9DLnJqnJvye4RrNFp8V7N9zk352+5GkRgdMbtt8W/mabOAugOjZDHE//wAlTsKpGUjAjZlsrIBGzLNGWSiNksCjNC9xYbvyIRVBBYFsgCAFsgCLZAGFAQAWxZCgPqG/MEAtggCAAAsXudEzkdIyT6lg3Yszew4l3NK1YZlyXqZlK/ImiNiyFMjSfmRuyEsuhJ0S9kSTKkZBXzbZm76mm7ZkUaias5rmabAjdshSEUKk6ssI3u+Rp8n6lxGUaRFyKUVF6ER0fNc/qaFQbJ0I3uVFsqdIzy5mZTrdrmS0abb6hsj2XmYMqrZLtkYApSIqACwQCNmTTMsgBAqCtIEKVAAAAABSpNmscL3fI36bFVng8zpjhLh91X/1BYp+zWSlwvz3LGXD0TQFakviUkc3FNbM9EJp/Ds0HCM5K9r2tAeOSae5k9OXG4R3fHDlfVPseeUa3XIIyCAgpLAAfUlghAbIUjIoyfMpAAtghEWwQBSw2CAW/P8AMWQEC33FvuAA3FvuAAt9xb7gDRbfdk3AAWLYAAfUABfmAAAsAAAAFkAAfMfMAB8x8wCB8x8wAHzHzAA",
+      "imageModel": "jpeg"
+    }
+  ]
 }

@@ -1,0 +1,48 @@
+{
+  "baseInfo": {
+    "insuredList": [
+      {
+        "idCardNo": "441423199107184736",
+        "name": "制度化",
+        "idCardNoType": 1,
+        "relation": 1
+      }
+    ],
+    "agentPhone": "13662236074",
+    "amount": 1000000,
+    "productId": "10000003",
+    "orderId": 111666706035769344,
+    "payTime": "2018-04-18 19:12:38",
+    "outerUserId": 122222223,
+    "agentName": "朱海冰",
+    "orderStatus": 5,
+    "policyNo": "S100000007P002181003758382",
+    "holder": {
+      "idCardNo": "441423199107184736",
+      "name": "制度化",
+      "idCardNoType": 1,
+      "email": "aa@qq.com"
+    },
+    "type": "P",
+    "platform": "保库达人nullnull",
+    "productName": "安心住院费用医疗保险",
+    "policyEndTime": "2019-04-18 23:59:59",
+    "createTime": "2018-04-18 19:03:34",
+    "policyBeginTime": "2018-04-19 00:00:00",
+    "subProductName": "无社保",
+    "insurCompany": "安心",
+    "channelName": "云贷",
+    "subProductId": 1000000301,
+    "commission": {
+      "channelInCommission": 272.27,
+      "channelTruncCommissionRatio": 10.8756,
+      "channelOutCommission": 242.66,
+      "bonus": 0,
+      "channelTruncCommission": 29.61,
+      "channelInCommissionRatio": 32.8877,
+      "channelOutCommissionRatio": 24.2418,
+      "outCommission": 242.66
+    }
+  },
+  "type": "P"
+}
