@@ -1,0 +1,6 @@
+eureka:
+  instance:
+    appname: demo-web
+spring:
+  application:
+    name: demo-web
