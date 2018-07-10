@@ -1,0 +1,10 @@
+profiles:
+  name: peer1
+eureka:
+  client:
+    service-url:
+        defaultZone: http://eureka-peer1:9980/eureka,http://eureka-peer2:9979/eureka
+  instance:
+    hostname: eureka-${profiles.name}
+server:
+  port: 9980

@@ -21,6 +21,7 @@
         <module>study-spring-boot</module>
         <module>study-jvm</module>
         <module>try-to-use</module>
+        <module>study-cloud-project</module>
   </modules>
 
 
@@ -40,7 +41,7 @@
     <!--依赖归类,几种项目在同一groupId下,可以进行版本统一-->
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <spring.version>5.0.5.RELEASE</spring.version>
+        <spring.version>5.0.7.RELEASE</spring.version>
     </properties>
 
     <dependencyManagement>
@@ -70,12 +71,12 @@
             <!--</exclusions>-->
             <!--</dependency>-->
             <!--scope 经典案例-->
-            <dependency>
-                <groupId>org.springframework</groupId>
-                <artifactId>spring-core</artifactId>
-                <version>${spring.version}</version>
-                <scope>compile</scope>
-            </dependency>
+            <!--<dependency>-->
+                <!--<groupId>org.springframework</groupId>-->
+                <!--<artifactId>spring-core</artifactId>-->
+                <!--<version>${spring.version}</version>-->
+                <!--<scope>compile</scope>-->
+            <!--</dependency>-->
             <dependency>
                 <groupId>mysql</groupId>
                 <artifactId>mysql-connector-java</artifactId>

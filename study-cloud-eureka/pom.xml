@@ -4,7 +4,7 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <artifactId>study-cloud-project</artifactId>
-        <groupId>com.chan.study</groupId>
+        <groupId>com.chan.study.cloud</groupId>
         <version>1.0-SNAPSHOT</version>
         <relativePath>../study-cloud-project</relativePath>
     </parent>
