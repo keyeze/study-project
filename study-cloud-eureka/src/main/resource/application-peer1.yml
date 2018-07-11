@@ -4,6 +4,9 @@ eureka:
   client:
     service-url:
         defaultZone: http://eureka-peer1:9980/eureka,http://eureka-peer2:9979/eureka
+        ctchanZone: http://www.baidu.com
+    availability-zones:
+      us-east-1 : ctchanZone,defaultZone
   instance:
     hostname: eureka-${profiles.name}
 server:

@@ -7,6 +7,11 @@
         <artifactId>study</artifactId>
         <version>1.0-SNAPSHOT</version>
     </parent>
+    <modules>
+        <module>../study-cloud-eureka</module>
+        <module>../study-cloud-demo-web</module>
+        <module>../study-cloud-ribbon</module>
+    </modules>
     <groupId>com.chan.study.cloud</groupId>
     <artifactId>study-cloud-project</artifactId>
     <version>1.0-SNAPSHOT</version>
@@ -71,9 +76,4 @@
             </plugins>
         </pluginManagement>
     </build>
-    <modules>
-        <module>../study-cloud-eureka</module>
-        <module>../study-cloud-demo-web</module>
-        <module>../study-cloud-ribbon</module>
-    </modules>
 </project>

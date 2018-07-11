@@ -6,6 +6,13 @@ eureka:
     fetch-registry: true
   instance:
     appname: eureka-service
+    #服务续约间隔时间(默认30秒)
+    lease-renewal-interval-in-seconds: 30
+    #服务失效时间(默认90秒)
+    lease-expiration-duration-in-seconds: 90
+  server:
+    #是否启动自我保护机制
+    enable-self-preservation: true
 spring:
   application:
     name: eureka-server
