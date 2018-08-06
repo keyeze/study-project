@@ -1,90 +1,11 @@
 {
-  "policy": {
-    "insureType": "意外险",
-    "insureCom": "众安在线财产保险股份有限公司",
-    "insureCode": "[\"寿险\",\"意外险\"]",
-    "insureComId": 201,
-    "insureAmount": "124",
-    "insureStarttime": "",
-    "insureEndtime": "",
-    "insureAgreement": "",
-    "insureAgent": "哈斯图雅",
-    "agentPhoneNo": "15248197643",
-    "orgName": "中旗分公司",
-    "agentId": "13147260611203072",
-    "isEffective": 1,
-    "relatedPolicyKey": 0,
-    "insureFee": "123",
-    "currentFee": "1357.00",
-    "feeChange": "123",
-    "remark": "1",
-    "policyId": "1324115134124",
-    "inRate": null,
-    "type": 2,
-    "payeeName": "123",
-    "payeeIdcardNo": "350122199408110815",
-    "bankAccount": "6568978956458526",
-    "bankName": "哈哈",
-    "insuredName": "sdfadf",
-    "commissionOut": "14.76",
-    "commissionIn": "",
-    "applicantName":"sss" /*新增 投保人..........................*/
-  },
-  "commissionChange": {
-    "payeeName": "123",
-    "payeeIdcardNo": "350122199408110815",
-    "bankAccount": "6568978956458526",
-    "bankName": "哈哈",
-    "inRate": null,
-    "outRate": "12.00",
-    "commissionOutChange": "14.76",
-    "commissionInChange": null,
-    "feeChange": "123"
-  },
-  "minuxImages": [
+  "code": 1000,
+  "message": "操作成功",
+  "data": [
     {
-      "imageContent": "iVBORw0KGgoAAAANSUhEUgAAAB4AAAAdCAYAAAC9pNwMAAABCElEQVRIie1WPQ5FQBAeL66g0qhUnMCBKJxBIY6goNerHUCtoBC9RqKkfe/NJLtZBXnbvE2sSSY7szPjmz/CeH8JFNBLBSiSue+7EmBlFT/AmgCv6wq+78M0TX8DNrZt0+sDwoGx1aLcti2dTBZtjHFEaCvLkttFva5rYvQV71A3zzIahgH6vqe5Z1kGQRBQcFEUJP9KSZLQc1hSy7KQftrqMAzpdF0Xuq4j2fM8iKJIagnTND0Uk+c5VSw1Y6wUs62qirdalrBjlxVfEVYRxzGM4wiWZR12oGma0zjsGJu1FDAGscWa55k6gKNwHIff27Z9Go/+yOin8Xv8AN8W2NDu9/YBvj/wB9O3gGnMT/WdAAAAAElFTkSuQmCC",
-      "imageMode": "png"
-    }
-  ],
-  "originalPolicy": {
-    "insureComId": 201,
-    "insureCom": "众安在线财产保险股份有限公司",
-    "agentId": "13147260611203072",
-    "insureAgent": "哈斯图雅",
-    "isEffective": 0,
-    "policyId": "48723654",
-    "insuredName": "水电费",
-    "insureType": "意外险",
-    "insureCode": "[\"寿险\",\"意外险\"]",
-    "insureFee": "1234",
-    "agentPhoneNo": "15248197643",
-    "orgName": "中旗分公司",
-    "outRate": "12",
-    "inRate": "",
-    "insureAmount": "124",
-    "endTime": "",
-    "startTime": "",
-    "insureAgreement": "",
-    "insureStarttime": "",
-    "insureEndtime": "",
-    "type": 1,
-    "remark": "1"
-  },
-  "commissionSettle": {
-    "agentId": "13147260611203072",
-    "agentPhoneNo": "15248197643",
-    "commissionOut": "162.84",
-    "outRate": "12.00",
-    "insureAgent": "哈斯图雅",
-    "orgName": "中旗分公司",
-    "payeeIdcardNo": "350122199408110815",
-    "payeeName": "123"
-  },
-  "images": [
-    {
-      "imageContent": "iVBORw0KGgoAAAANSUhEUgAAAB4AAAAdCAYAAAC9pNwMAAABCElEQVRIie1WPQ5FQBAeL66g0qhUnMCBKJxBIY6goNerHUCtoBC9RqKkfe/NJLtZBXnbvE2sSSY7szPjmz/CeH8JFNBLBSiSue+7EmBlFT/AmgCv6wq+78M0TX8DNrZt0+sDwoGx1aLcti2dTBZtjHFEaCvLkttFva5rYvQV71A3zzIahgH6vqe5Z1kGQRBQcFEUJP9KSZLQc1hSy7KQftrqMAzpdF0Xuq4j2fM8iKJIagnTND0Uk+c5VSw1Y6wUs62qirdalrBjlxVfEVYRxzGM4wiWZR12oGma0zjsGJu1FDAGscWa55k6gKNwHIff27Z9Go/+yOin8Xv8AN8W2NDu9/YBvj/wB9O3gGnMT/WdAAAAAElFTkSuQmCC",
-      "imageMode": "png"
+      "id": 1,
+      "insurCompany": "太平洋",
+      "marginRadio": 0.2
     }
   ]
 }
