@@ -14,7 +14,6 @@ import javax.annotation.Resource;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.time.DateTimeException;
-import java.time.LocalTime;
 import java.util.Date;
 
 @Profile("peer1")
@@ -43,21 +42,25 @@ public class DemoPeer1Controller {
         return timeHelper.countDown(targetTime
                 , currentTime -> (((nowTime - currentTime) / SinglePointTimer.DEFAULT_STEP) % 20) == 0
                 , currentTime -> {
-                    long temp = targetTime.getTime() - currentTime;
-                    int days = (int) (temp / DAY_UNIT);
-                    temp = targetTime.getTime() - currentTime;
-                    int hour = (int) (temp / HOUR_UNIT);
-                    temp = temp % HOUR_UNIT;
-                    int min = (int) (temp / MIN_UNIT);
-                    temp = temp % MIN_UNIT;
-                    int secoud = (int) (temp / SECOND_UNIT);
-                    System.out.println(Thread.currentThread().getName() + "距离目标时间 : " + hour + ":" + min + ":" + secoud);
+                    String timingStr = getTimingStr(targetTime.getTime(), currentTime);
+                    System.out.println(Thread.currentThread().getName() + "距离目标时间 : " + timingStr);
                     try {
-                        LocalTime localTime = LocalTime.of(hour, min, secoud);
-                        return Thread.currentThread().getName() + "距离目标时间 : " + (days == 0 ? "" : days + "天") + localTime;
+                        return Thread.currentThread().getName() + "距离目标时间 : " + timingStr;
                     } catch (DateTimeException e) {
                         return new SimpleDateFormat("HH:mm:ss").format(new Date(currentTime)) + " 任务已完成";
                     }
                 });
+    }
+
+    public static String getTimingStr(long targetTime, long currentTime) {
+        long temp = targetTime - currentTime;
+        int days = (int) (temp / DAY_UNIT);
+        temp = targetTime - currentTime;
+        int hour = (int) (temp / HOUR_UNIT);
+        temp = temp % HOUR_UNIT;
+        int min = (int) (temp / MIN_UNIT);
+        temp = temp % MIN_UNIT;
+        int secoud = (int) (temp / SECOND_UNIT);
+        return (days == 0 ? "" : days + "天 ") + hour + ":" + min + ":" + secoud;
     }
 }

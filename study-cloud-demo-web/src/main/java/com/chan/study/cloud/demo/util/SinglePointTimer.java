@@ -10,7 +10,7 @@ import java.util.concurrent.ExecutorService;
 
 public class SinglePointTimer implements Runnable {
     public final static long DEFAULT_STEP = 50;
-    private Map<String, ListenerTask> taskMap = new ConcurrentHashMap<>();
+    private volatile Map<String, ListenerTask> taskMap = new ConcurrentHashMap<>();
     @Resource
     private volatile ExecutorService taskExecutor;
     private final Runnable singlePointTimer = () -> {
@@ -22,12 +22,15 @@ public class SinglePointTimer implements Runnable {
                     taskExecutor.execute(() -> {
                         value.execute(currentTime);
                         if (value.isEnd(currentTime)){
+                            System.out.println("END...");
                             value.endExecute(currentTime);
+                            removeList.add(key);
                         }
                     });
                 }
             });
             removeList.forEach(item -> taskMap.remove(item));
+            removeList.clear();
             try {
                 Thread.sleep(DEFAULT_STEP);
             } catch (InterruptedException e) {
