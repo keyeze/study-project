@@ -4,9 +4,12 @@ eureka:
   client:
     service-url:
         defaultZone: http://eureka-peer1:9980/eureka,http://eureka-peer2:9979/eureka
-        ctchanZone: http://www.baidu.com
+        ctchanZone: http://admin:adminbaokocn@10.40.11.100:8761/eureka
+    # 配置系统空间,key为区域名,键为空间名
     availability-zones:
-      us-east-1 : ctchanZone,defaultZone
+      ctchan : ctchanZone,defaultZone
+    # 系统区域,一个微服务可以属于一个区域,默认为 us-east-1
+    region: ctchan
   instance:
     hostname: eureka-${profiles.name}
 server:

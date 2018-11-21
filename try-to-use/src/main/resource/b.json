@@ -1,11 +1,8 @@
+GET accountdatas/policys/_search
 {
-  "code": 1000,
-  "message": "操作成功",
-  "data": [
-    {
-      "id": 1,
-      "insurCompany": "太平洋",
-      "marginRadio": 0.2
+  "query": {
+    "match_phrase": {
+      "orderId":1973
     }
-  ]
+  }
 }

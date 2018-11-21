@@ -13,7 +13,6 @@ import org.springframework.web.bind.annotation.RestController;
 import javax.annotation.Resource;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.time.DateTimeException;
 import java.util.Date;
 
 @Profile("peer1")
@@ -39,16 +38,14 @@ public class DemoPeer1Controller {
     public String timing(@PathVariable("time") String time, @PathVariable("pattern") String pattern) throws ParseException {
         final long nowTime = System.currentTimeMillis();
         final Date targetTime = new SimpleDateFormat(pattern).parse(time);
+        final SimpleDateFormat defaultShowTime = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         return timeHelper.countDown(targetTime
                 , currentTime -> (((nowTime - currentTime) / SinglePointTimer.DEFAULT_STEP) % 20) == 0
                 , currentTime -> {
                     String timingStr = getTimingStr(targetTime.getTime(), currentTime);
-                    System.out.println(Thread.currentThread().getName() + "距离目标时间 : " + timingStr);
-                    try {
-                        return Thread.currentThread().getName() + "距离目标时间 : " + timingStr;
-                    } catch (DateTimeException e) {
-                        return new SimpleDateFormat("HH:mm:ss").format(new Date(currentTime)) + " 任务已完成";
-                    }
+                    String result = Thread.currentThread().getName() + ", 目标时间为 : " + defaultShowTime.format(targetTime) + ", 距离目标时间 : " + timingStr;
+                    System.out.println(result);
+                    return result;
                 });
     }
 

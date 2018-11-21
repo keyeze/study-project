@@ -21,7 +21,7 @@ public class SinglePointTimer implements Runnable {
                 if (value.isListener(currentTime)) {
                     taskExecutor.execute(() -> {
                         value.execute(currentTime);
-                        if (value.isEnd(currentTime)){
+                        if (value.isEnd(currentTime)) {
                             System.out.println("END...");
                             value.endExecute(currentTime);
                             removeList.add(key);
@@ -29,7 +29,10 @@ public class SinglePointTimer implements Runnable {
                     });
                 }
             });
-            removeList.forEach(item -> taskMap.remove(item));
+            removeList.forEach(item -> {
+                System.out.println("remove -> " + item);
+                taskMap.remove(item);
+            });
             removeList.clear();
             try {
                 Thread.sleep(DEFAULT_STEP);
@@ -40,6 +43,14 @@ public class SinglePointTimer implements Runnable {
     };
 
 
+    /**
+     * 放入时间监听任务
+     *
+     * @param endCondition      结束条件
+     * @param endListener       结束执行
+     * @param listenerCondition 监听条件
+     * @param listener          监听执行
+     */
     public void pushTask(Condition endCondition, Listener endListener, Condition listenerCondition, Listener listener) {
         taskMap.put(UUID.randomUUID().toString(), new ListenerTask() {
             @Override

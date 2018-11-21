@@ -3,19 +3,16 @@ package com.chan.study.config;
 import org.springframework.boot.actuate.health.AbstractHealthIndicator;
 import org.springframework.boot.actuate.health.Health;
 import org.springframework.boot.actuate.health.HealthIndicator;
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.ComponentScan;
-import org.springframework.context.annotation.Configuration;
 
-@Configuration
-@ComponentScan(
+//@Configuration
+//@ComponentScan(
         //表明扫描范围
-        basePackages = "com.chan.study.monitor",
+//        basePackages = "com.chan.study.monitor",
         //排除部分需要引入的文件
-        excludeFilters = {}
-)
+//        excludeFilters = {}
+//)
 public class MonitorComponentConfig {
-    @Bean
+//    @Bean
     public HealthIndicator eurekaHealthIndicator() {
         return new AbstractHealthIndicator() {
             @Override

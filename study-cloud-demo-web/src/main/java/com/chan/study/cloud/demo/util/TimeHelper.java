@@ -21,21 +21,43 @@ public class TimeHelper {
         countDown(targetTime, (long currentTime) -> listener != null, listener);
     }
 
-    //时间计时器
+    /**
+     * 时间计时任务
+     *
+     * @param targetTime        目标时间
+     * @param listenerCondition 条件监听
+     * @param listener          监听执行方法
+     *
+     * @return
+     */
+
     public String countDown(Date targetTime, SinglePointTimer.Condition listenerCondition, ListenerMessage listener) {
         String key = new SimpleDateFormat("yyyyMMddHHmmss").format(targetTime);
         return Optional.ofNullable(timeMessages.get(key)).orElseGet(() -> {
-            singlePointTimer.pushTask(currentTime -> currentTime >= targetTime.getTime()
+            singlePointTimer.pushTask(
+                    //结束条件
+                    currentTime -> currentTime >= targetTime.getTime()
+                    //结束执行方法
                     , currentTime -> timeMessages.put(key, Optional.ofNullable(timeMessages.get(key)).orElse("已超时").concat(",计时已结束"))
+                    //计时监听条件
                     , listenerCondition
+                    //监听执行方法
                     , (currentTime) -> timeMessages.put(key, listener.doIfPresence(currentTime))
             );
             return Thread.currentThread().getName() + "计时任务已经启动";
         });
     }
 
+
     @FunctionalInterface
     public interface ListenerMessage {
+        /**
+         * 如果为真就执行
+         *
+         * @param currentTime 当前时间
+         *
+         * @return
+         */
         String doIfPresence(long currentTime);
     }
 
