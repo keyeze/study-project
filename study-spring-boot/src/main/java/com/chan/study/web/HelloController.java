@@ -1,4 +1,4 @@
-package com.chan.study.web.controller;
+package com.chan.study.web;
 
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.web.bind.annotation.GetMapping;

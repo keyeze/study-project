@@ -17,7 +17,7 @@
 		<url>http://www.spring.io</url>
 	</organization>
 	<properties>
-		<main.basedir>com.chan.study.application.SimpleApplication</main.basedir>
+		<main.basedir>SimpleApplication</main.basedir>
 	</properties>
 	<dependencies>
 		<dependency>
