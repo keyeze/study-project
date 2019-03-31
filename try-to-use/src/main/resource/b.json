@@ -1,8 +1,0 @@
-GET accountdatas/policys/_search
-{
-  "query": {
-    "match_phrase": {
-      "orderId":1973
-    }
-  }
-}
