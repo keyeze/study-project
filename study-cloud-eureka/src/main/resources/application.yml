@@ -1,21 +1,25 @@
 eureka:
   client:
-#   是否注册自己 @1
-    register-with-eureka: true
-#   是否检索服务,(因为是注册中心,不需要依赖其他服务)
+    #配置系统空间,key为区域名,键为空间名
+    availability-zones:
+      us-east-1: ctchan-zone,defaultZone
+    #是否检索服务,(因为是注册中心,不需要依赖其他服务)
     fetch-registry: false
-    healthcheck:
-      enabled: true
+    #是否注册自己 @1
+    register-with-eureka: true
+    service-url:
+      defaultZone: http://localhost:9980/eureka,http://localhost:9979/eureka
   instance:
     appname: eureka-service
     #服务续约间隔时间(默认30秒)  --  p1
     lease-renewal-interval-in-seconds: 30
     #服务失效时间(默认90秒)    --  p1
     lease-expiration-duration-in-seconds: 90
+    instance-id: ${eureka.instance.metadata-map.zone}-${eureka.instance.appname}
     #一般不需要指定监控点
-#    status-page-url-path: ${management.server.servlet.context-path}/info
-#    health-check-url-path: ${management.server.servlet.context-path}/health
-#    home-page-url-path:
+  #status-page-url-path: ${management.server.servlet.context-path}/info
+  #health-check-url-path: ${management.server.servlet.context-path}/health
+  #home-page-url-path:
   server:
     #是否启动自我保护机制
     enable-self-preservation: true

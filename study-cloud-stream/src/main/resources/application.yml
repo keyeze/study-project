@@ -1,0 +1,23 @@
+eureka:
+  instance:
+    appname: stream-service
+    instance-id: ${eureka.instance.metadata-map.zone}-${eureka.instance.appname}
+    metadata-map:
+      zone: defaultZone
+  client:
+    availability-zones:
+      us-east-1: ctchan-zone,defaultZone
+    region: us-east-1
+    prefer-same-zone-eureka: true
+    service-url:
+      defaultZone: http://localhost:9979/eureka
+spring:
+  application:
+    name: stream-service
+  http:
+    encoding:
+      force: true
+      charset: UTF-8
+      enabled: true
+server:
+  port: 0

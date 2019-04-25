@@ -1,0 +1,7 @@
+eureka:
+  instance:
+    metadata-map:
+      zone: ctchan-zone
+  client:
+    service-url:
+      ctchan-zone: http://localhost:9980/eureka

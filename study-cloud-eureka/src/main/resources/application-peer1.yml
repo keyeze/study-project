@@ -1,0 +1,14 @@
+profiles:
+  name: peer1
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:9979/eureka
+    # 系统区域,一个微服务可以属于一个区域,默认为 us-east-1
+    region: us-east-1
+  instance:
+    hostname: eureka-${profiles.name}
+    metadata-map:
+      zone: ctchan-zone
+server:
+  port: 9980

@@ -1,0 +1,6 @@
+topmdrt:
+  http:
+    client:
+      config:
+        retry-time: 2
+

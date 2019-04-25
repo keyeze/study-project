@@ -3,8 +3,10 @@ profiles:
 eureka:
   client:
     service-url:
-        defaultZone: http://eureka-peer1:9980/eureka,http://eureka-peer2:9979/eureka
+      ctchan-zone: http://localhost:9980/eureka
   instance:
     hostname: eureka-${profiles.name}
+    metadata-map:
+      zone: defaultZone
 server:
   port: 9979
