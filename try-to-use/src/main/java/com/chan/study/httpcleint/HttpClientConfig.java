@@ -1,11 +1,17 @@
 package com.chan.study.httpcleint;
 
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.Import;
+
+import javax.annotation.Resource;
 
 @Configuration
-@Import({
-        HttpRequestRetryHandlerComponent.class
-})
 public class HttpClientConfig {
+    @Resource
+    private HttpClientProperties httpClientProperties;
+
+    @Bean
+    public String string(){
+        return httpClientProperties.getRetryTime();
+    }
 }

@@ -27,42 +27,41 @@ public class RequestRetryHandlerConfig {
       
     @Bean  
     public HttpRequestRetryHandler httpRequestRetryHandler() {  
-        // 请求重试  
-        final int retryTime = this.retryTime;  
-        return new HttpRequestRetryHandler() {  
-            @Override
+        // 请求重试
+        final int retryTime = this.retryTime;
+        return new HttpRequestRetryHandler() {
             public boolean retryRequest(IOException exception, int executionCount, HttpContext context) {
-                // Do not retry if over max retry count,如果重试次数超过了retryTime,则不再重试请求  
-                if (executionCount >= retryTime) {  
-                    return false;  
-                }  
-                // 服务端断掉客户端的连接异常  
-                if (exception instanceof NoHttpResponseException) {  
-                    return true;  
-                }  
-                // time out 超时重试  
+                // Do not retry if over max retry count,如果重试次数超过了retryTime,则不再重试请求
+                if (executionCount >= retryTime) {
+                    return false;
+                }
+                // 服务端断掉客户端的连接异常
+                if (exception instanceof NoHttpResponseException) {
+                    return true;
+                }
+                // time out 超时重试
                 if (exception instanceof InterruptedIOException) {
-                    return true;  
-                }  
-                // Unknown host  
+                    return true;
+                }
+                // Unknown host
                 if (exception instanceof UnknownHostException) {
-                    return false;  
-                }  
-                // Connection refused  
-                if (exception instanceof ConnectTimeoutException) {  
-                    return false;  
-                }  
-                // SSL handshake exception  
+                    return false;
+                }
+                // Connection refused
+                if (exception instanceof ConnectTimeoutException) {
+                    return false;
+                }
+                // SSL handshake exception
                 if (exception instanceof SSLException) {
-                    return false;  
-                }  
-                HttpClientContext clientContext = HttpClientContext.adapt(context);  
-                HttpRequest request = clientContext.getRequest();  
-                if (!(request instanceof HttpEntityEnclosingRequest)) {  
-                    return true;  
-                }  
-                return false;  
-            }  
+                    return false;
+                }
+                HttpClientContext clientContext = HttpClientContext.adapt(context);
+                HttpRequest request = clientContext.getRequest();
+                if (!(request instanceof HttpEntityEnclosingRequest)) {
+                    return true;
+                }
+                return false;
+            }
         };  
     }  
 }  
