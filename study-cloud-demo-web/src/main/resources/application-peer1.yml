@@ -1,0 +1,13 @@
+server:
+  port: 9981
+eureka:
+  client:
+    #可以放服务注入特定的空间中
+    service-url:
+      #默认空间defaultZone:
+      defaultZone: http://eureka-peer1:9980/eureka/
+    #优先使用同zone的服务，默认为true(eureka.instance.metadata-map )
+    prefer-same-zone-eureka: true
+  instance:
+    #用来表示，现在服务所在的zone，（会优先调用相同zone的服务）
+#    metadata-map:

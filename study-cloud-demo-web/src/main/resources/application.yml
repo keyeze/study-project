@@ -1,0 +1,11 @@
+eureka:
+  instance:
+    appname: demo-web
+spring:
+  application:
+    name: demo-web
+  http:
+    encoding:
+      force: true
+      charset: UTF-8
+      enabled: true

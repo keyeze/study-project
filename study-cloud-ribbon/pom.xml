@@ -9,7 +9,6 @@
         <relativePath>../study-cloud-project</relativePath>
     </parent>
 
-    <groupId>com.chan.study.cloud</groupId>
     <artifactId>study-cloud-ribbon</artifactId>
     <version>1.0-SNAPSHOT</version>
 

@@ -1,0 +1,6 @@
+server:
+  port: 9982
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka-peer1:9979/eureka/
