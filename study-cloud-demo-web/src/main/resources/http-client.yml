@@ -1,0 +1,7 @@
+topmdrt:
+  http:
+    client:
+      config:
+        retry-time: 2
+        socket-time-out: 2000
+

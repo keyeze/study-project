@@ -1,4 +1,4 @@
-package com.chan.study.cloud.config;
+package com.chan.study.cloud.demo.config;
 
 import com.chan.study.cloud.demo.util.SinglePointTimer;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -53,6 +53,10 @@
             <optional>true</optional>
         </dependency>
         <dependency>
+            <groupId>org.apache.httpcomponents</groupId>
+            <artifactId>httpclient</artifactId>
+        </dependency>
+        <dependency>
             <groupId>com.chan.study.cloud.auth</groupId>
             <artifactId>auth-client</artifactId>
         </dependency>
