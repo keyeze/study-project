@@ -18,7 +18,6 @@ import org.apache.http.impl.conn.PoolingHttpClientConnectionManager;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingClass;
-import org.springframework.cloud.client.loadbalancer.LoadBalanced;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.client.ClientHttpRequestFactory;
@@ -45,10 +44,10 @@ public class HttpClientConfig {
         SocketConfig socketConfig = SocketConfig.custom().setTcpNoDelay(true).build();
         manager.setDefaultSocketConfig(socketConfig);
         //设置整个连接池的最大连接数
-        manager.setMaxTotal(300);
+        manager.setMaxTotal(30);
         // 设置每个路由的默认组大连接
         // 设置过小无法支持大并发(ConnectionPoolTimeoutException)
-        manager.setDefaultMaxPerRoute(200);
+        manager.setDefaultMaxPerRoute(30);
         // 设置从连接池获连接时,连接不活跃多长时间需要进行一次验证
         manager.setValidateAfterInactivity(5000);
         return manager;
@@ -122,7 +121,6 @@ public class HttpClientConfig {
     }
 
     @Bean
-    @LoadBalanced
     @ConditionalOnClass(ClientHttpRequestFactory.class)
     public RestTemplate restTemplate(ClientHttpRequestFactory requestFactory){
         log.info("装载 rest-template 对象...");

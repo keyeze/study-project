@@ -2,15 +2,18 @@ package com.chan.study.cloud.demo.util;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
+import org.springframework.lang.Nullable;
 import org.springframework.stereotype.Service;
 import org.springframework.util.LinkedMultiValueMap;
 import org.springframework.util.MultiValueMap;
 import org.springframework.web.client.RestTemplate;
 
 import javax.annotation.PostConstruct;
+import javax.annotation.Resource;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
@@ -90,10 +93,7 @@ public class TopmdrtHttpClientServiceImpl implements HttpClientService {
         Object bodyEntity = resloveMessage(body);
         Optional.ofNullable(headerMap).ifPresent(item -> item.forEach(header::add));
         HttpEntity httpEntity = new HttpEntity<>(bodyEntity, header);
-        if (requestParams == null) {
-            return restTemplate.exchange(url, method, httpEntity, respClz).getBody();
-        }
-        return restTemplate.exchange(url, method, httpEntity, respClz, requestParams).getBody();
+        return this.exchange(url,method,httpEntity,respClz,requestParams);
     }
 
 
@@ -112,5 +112,19 @@ public class TopmdrtHttpClientServiceImpl implements HttpClientService {
             return params;
         }
         throw new RuntimeException("can not resolve request body to convert...");
+    }
+
+    private <Resp> Resp exchange(String url, HttpMethod method, @Nullable HttpEntity<?> httpEntity, Class<Resp> respClz,  Map<String, String> requestParams){
+//        String key = "outRestTemplate";
+//        if (url.matches("^\\w+://.+$")) {
+//            if (url.startsWith("feign")) {
+//                key = "restTemplate";
+//                url = url.replaceFirst("feign","http");
+//            }
+//        }
+        if (requestParams == null) {
+            return restTemplate.exchange(url, method, httpEntity, respClz).getBody();
+        }
+        return restTemplate.exchange(url, method, httpEntity, respClz, requestParams).getBody();
     }
 }

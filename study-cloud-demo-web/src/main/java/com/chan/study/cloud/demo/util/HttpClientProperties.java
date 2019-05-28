@@ -27,6 +27,8 @@ public class HttpClientProperties {
     private int readTimeout;
     private int connectTimeout;
 
+    private Map<String,String> protocols;
+
     public List<Header> getHeaderList(){
         if (!Optional.ofNullable(headers).isPresent()) {
             return null;
