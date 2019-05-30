@@ -18,13 +18,18 @@ import org.apache.http.impl.conn.PoolingHttpClientConnectionManager;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingClass;
+import org.springframework.boot.web.embedded.tomcat.TomcatConnectorCustomizer;
+import org.springframework.cloud.client.loadbalancer.LoadBalanced;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.client.ClientHttpRequestFactory;
 import org.springframework.http.client.HttpComponentsClientHttpRequestFactory;
+import org.springframework.http.converter.HttpMessageConverter;
+import org.springframework.http.converter.json.MappingJackson2HttpMessageConverter;
 import org.springframework.web.client.RestTemplate;
 
 import javax.annotation.Resource;
+import java.nio.charset.Charset;
 import java.util.concurrent.TimeUnit;
 
 @Slf4j
@@ -121,10 +126,27 @@ public class HttpClientConfig {
     }
 
     @Bean
+    @LoadBalanced
     @ConditionalOnClass(ClientHttpRequestFactory.class)
     public RestTemplate restTemplate(ClientHttpRequestFactory requestFactory){
         log.info("装载 rest-template 对象...");
         return new RestTemplate(requestFactory);
     }
-    //todo CtChan 执行监控线程用于管理线程安全
+    @Bean
+    @ConditionalOnClass(MappingJackson2HttpMessageConverter.class)
+    public HttpMessageConverter customJackon2HttpMessageConverter(MappingJackson2HttpMessageConverter mappingJackson2HttpMessageConverter){
+        CustomJackson2HttpMessageConverter bean = new CustomJackson2HttpMessageConverter();
+        bean.setDefaultCharset(Charset.forName("UTF-8"));
+        bean.setSupportedMediaTypes(mappingJackson2HttpMessageConverter.getSupportedMediaTypes());
+        return bean;
+    }
+
+    @Bean
+    public EmbeddedServletContainerFactory getEmbeddedServletContainerFactory() {
+        TomcatEmbeddedServletContainerFactory containerFactory = new TomcatEmbeddedServletContainerFactory();
+        containerFactory
+                .addConnectorCustomizers((TomcatConnectorCustomizer) connector -> ((AbstractProtocol) connector.getProtocolHandler())
+                        .setKeepAliveTimeout(5000));
+        return containerFactory;
+    }
 }
