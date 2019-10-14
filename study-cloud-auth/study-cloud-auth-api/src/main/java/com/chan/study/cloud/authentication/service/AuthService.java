@@ -1,7 +1,6 @@
 package com.chan.study.cloud.authentication.service;
 
 import com.chan.study.cloud.authentication.config.TokenConfig;
-import com.chan.study.cloud.authentication.domain.ChangeRolesReq;
 import com.chan.study.cloud.authentication.domain.LoginSessionDto;
 import com.chan.study.cloud.authentication.util.JwtHelper;
 import lombok.Data;
@@ -30,14 +29,14 @@ public class AuthService {
         //todo: 获取uuid,查询uuid对应的role权限
         LoginSessionDto loginSessionDto = new LoginSessionDto();
         loginSessionDto.setBirth(payload.getTimestamp());
-        loginSessionDto.setRoles(roleService.getRolesByUuid());
         loginSessionDto.setUuid(payload.getUuid());
+        loginSessionDto.setRoles(roleService.getRolesByUuid(payload.getUuid()));
         return loginSessionDto;
     }
 
     public void changeRolesByToken(String token, List<String> roles) {
         Payload payload = validAndRefreshToken(token);
-        roleService.addRolesByUuid(payload.getUuid(),roles);
+        roleService.changeRolesByUuid(payload.getUuid(),roles);
     }
 
     @Data
