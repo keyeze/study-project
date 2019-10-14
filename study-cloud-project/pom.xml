@@ -11,22 +11,23 @@
         <module>../study-cloud-eureka</module>
         <module>../study-cloud-demo-web</module>
         <module>../study-cloud-ribbon</module>
-        <module>../study-cloud-gateway-zuul</module>
         <module>../study-cloud-auth</module>
         <module>../study-cloud-gateway</module>
+        <module>../study-cloud-gateway-zuul</module>
         <module>../study-cloud-stream</module>
-        <module>../study-cloud-eureka</module>
     </modules>
+
     <groupId>com.chan.study.cloud</groupId>
     <artifactId>study-cloud-project</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>pom</packaging>
-    <name>study-cloud-project</name>
+
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>8</maven.compiler.source>
         <maven.compiler.target>8</maven.compiler.target>
     </properties>
+
     <dependencyManagement>
         <dependencies>
             <dependency>
@@ -38,4 +39,5 @@
             </dependency>
         </dependencies>
     </dependencyManagement>
+
 </project>

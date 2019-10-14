@@ -1,4 +1,4 @@
-package com.chan.study.cloud.demo.config;
+package com.chan.study.cloud.gateway.config;
 
 import org.springframework.cloud.client.loadbalancer.LoadBalanced;
 import org.springframework.context.annotation.Bean;

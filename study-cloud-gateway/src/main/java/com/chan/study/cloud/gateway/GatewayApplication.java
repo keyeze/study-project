@@ -1,6 +1,6 @@
-package com.chan.study.cloud.demo.gateway;
+package com.chan.study.cloud.gateway;
 
-import com.chan.study.cloud.demo.config.GatewayConfig;
+import com.chan.study.cloud.gateway.config.GatewayConfig;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;

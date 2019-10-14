@@ -17,11 +17,11 @@
     <!--一级子项目-->
     <modules><!--这是目录结构-->
         <!--<module>../xxxx</module>--><!--路径地址.可以如左设置-->
-        <module>study-maven</module>
-        <module>study-spring</module>
-        <module>study-spring-boot</module>
-        <module>study-jvm</module>
-        <module>try-to-use</module>
+        <!--<module>study-maven</module>-->
+        <!--<module>study-spring</module>-->
+        <!--<module>study-spring-boot</module>-->
+        <!--<module>study-jvm</module>-->
+        <!--<module>try-to-use</module>-->
         <module>study-cloud-project</module>
         <module>study-cloud-dependencies</module>
     </modules>
@@ -84,68 +84,15 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-dependencies</artifactId>
                 <version>2.1.1.RELEASE</version>
-                <type>pom</type>
                 <scope>import</scope>
-            </dependency>
-            <dependency>
-                <groupId>mysql</groupId>
-                <artifactId>mysql-connector-java</artifactId>
-                <version>5.1.40</version>
-                <scope>runtime</scope>
-            </dependency>
-            <dependency>
-                <groupId>junit</groupId>
-                <artifactId>junit</artifactId>
-                <version>4.12</version>
-                <scope>test</scope>
-            </dependency>
-            <dependency>
-                <groupId>javax.servlet</groupId>
-                <artifactId>servlet-api</artifactId>
-                <version>2.5</version>
-                <scope>provided</scope>
+                <type>pom</type>
             </dependency>
             <!-- 演示结束 -->
-            <dependency>
-                <groupId>org.projectlombok</groupId>
-                <artifactId>lombok</artifactId>
-                <version>1.16.8</version>
-            </dependency>
             <!-- https://mvnrepository.com/artifact/org.slf4j/slf4j-api -->
-            <dependency>
-                <groupId>org.slf4j</groupId>
-                <artifactId>slf4j-api</artifactId>
-                <version>1.7.25</version>
-            </dependency>
-            <dependency>
-                <groupId>cglib</groupId>
-                <artifactId>cglib</artifactId>
-                <version>3.2.6</version>
-            </dependency>
             <dependency>
                 <groupId>com.alibaba</groupId>
                 <artifactId>fastjson</artifactId>
                 <version>1.2.47</version>
-            </dependency>
-            <!-- https://mvnrepository.com/artifact/commons-lang/commons-lang -->
-            <dependency>
-                <groupId>commons-lang</groupId>
-                <artifactId>commons-lang</artifactId>
-                <version>2.6</version>
-            </dependency>
-            <!-- https://mvnrepository.com/artifact/org.apache.rocketmq/rocketmq-client -->
-            <dependency>
-                <groupId>org.apache.rocketmq</groupId>
-                <artifactId>rocketmq-client</artifactId>
-                <version>4.3.2</version>
-            </dependency>
-
-            <dependency>
-                <groupId>org.springframework.cloud</groupId>
-                <artifactId>spring-cloud-dependencies</artifactId>
-                <version>Finchley.RELEASE</version>
-                <scope>import</scope>
-                <type>pom</type>
             </dependency>
         </dependencies>
     </dependencyManagement>

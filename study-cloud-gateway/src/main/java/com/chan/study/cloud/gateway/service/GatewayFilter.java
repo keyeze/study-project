@@ -1,4 +1,4 @@
-package com.chan.study.cloud.demo.service;
+package com.chan.study.cloud.gateway.service;
 
 import com.netflix.zuul.ZuulFilter;
 import com.netflix.zuul.exception.ZuulException;
