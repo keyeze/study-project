@@ -23,6 +23,7 @@
         <module>study-jvm</module>
         <module>try-to-use</module>
         <module>study-cloud-project</module>
+        <module>study-cloud-dependencies</module>
     </modules>
 
 
@@ -42,7 +43,6 @@
     <!--依赖归类,几种项目在同一groupId下,可以进行版本统一-->
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <spring.version>5.0.7.RELEASE</spring.version>
     </properties>
 
     <dependencyManagement>

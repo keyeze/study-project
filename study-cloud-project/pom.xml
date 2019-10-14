@@ -13,6 +13,9 @@
         <module>../study-cloud-ribbon</module>
         <module>../study-cloud-gateway-zuul</module>
         <module>../study-cloud-auth</module>
+        <module>../study-cloud-gateway</module>
+        <module>../study-cloud-stream</module>
+        <module>../study-cloud-eureka</module>
     </modules>
     <groupId>com.chan.study.cloud</groupId>
     <artifactId>study-cloud-project</artifactId>
