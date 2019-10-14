@@ -12,8 +12,6 @@
     <artifactId>study-cloud-feign</artifactId>
     <version>1.0-SNAPSHOT</version>
 
-    <name>study-cloud-eureka</name>
-    <url>http://www.example.com</url>
 
     <modules>
         <module>study-cloud-consumer</module>
@@ -47,7 +45,7 @@
         </dependency>
         <dependency>
             <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-netflix-eureka-server</artifactId>
+            <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
         </dependency>
         <dependency>
             <groupId>org.springframework.cloud</groupId>
