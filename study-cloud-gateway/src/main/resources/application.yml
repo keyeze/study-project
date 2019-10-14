@@ -1,0 +1,31 @@
+spring:
+  application:
+    name: gateway-service
+  cloud:
+    loadbalancer:
+      retry:
+        enabled: true
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka-peer1:9980/eureka
+    #设置获取服务清单的时间,默认30秒
+    registry-fetch-interval-seconds: 30
+#  instance:
+#    appname: gateway-service
+server:
+  port: 80
+zuul:
+  routes:
+    demo-web:
+      path: /demo/**
+      serviceId: DEMO-WEB
+    eureka-server:
+      path: /eureka/**
+      serviceId: EUREKA-SERVICE
+    ribbon-server:
+      path: /ribbon/**
+      serviceId: RIBBON-SERVICE
+    auth-server:
+      path: /auth/**
+      serviceId: AUTH-SERVICE
