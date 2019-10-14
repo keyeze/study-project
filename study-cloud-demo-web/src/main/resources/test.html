@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<script type="text/javascript">
+    function test() {
+        var json = [
+            "http://peer5/ssl-token.html",
+            "http://peer6/ssl-token.html",
+            "http://peer7/ssl-token.html",
+            "http://peer8/ssl-token.html"
+        ];
+        var i = 0;
+        console.log('start set token to local storage ...');
+        json.forEach(function (item) {
+            var frameItem = document.createElement('iframe');
+            var j = i++;
+            frameItem.onload = function () {
+                console.log('message to ' + item);
+                window.frames[j].postMessage('hello', '*');
+            };
+            frameItem.src = item;
+            frameItem.hidden = 'hidden';
+            document.body.append(frameItem);
+        })
+    }
+</script>

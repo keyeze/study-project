@@ -1,4 +1,4 @@
-package com.chan.study.cloud.demo.util;
+package com.chan.study.cloud.util;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -111,7 +111,7 @@ public class TopmdrtHttpClientServiceImpl implements HttpClientService {
         throw new RuntimeException("can not resolve request body to convert...");
     }
 
-    private <Resp> Resp exchange(String url, HttpMethod method, @Nullable HttpEntity<?> httpEntity, Class<Resp> respClz,  Map<String, String> requestParams){
+    private <Resp> Resp exchange(String url, HttpMethod method, HttpEntity<?> httpEntity, Class<Resp> respClz,  Map<String, String> requestParams){
 //        String key = "outRestTemplate";
 //        if (url.matches("^\\w+://.+$")) {
 //            if (url.startsWith("feign")) {

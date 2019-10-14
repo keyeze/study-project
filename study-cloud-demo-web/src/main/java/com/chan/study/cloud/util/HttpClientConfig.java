@@ -1,4 +1,4 @@
-package com.chan.study.cloud.demo.util;
+package com.chan.study.cloud.util;
 
 import lombok.extern.slf4j.Slf4j;
 import org.apache.http.client.HttpClient;
@@ -18,7 +18,6 @@ import org.apache.http.impl.conn.PoolingHttpClientConnectionManager;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingClass;
-import org.springframework.boot.web.embedded.tomcat.TomcatConnectorCustomizer;
 import org.springframework.cloud.client.loadbalancer.LoadBalanced;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -141,12 +140,4 @@ public class HttpClientConfig {
         return bean;
     }
 
-    @Bean
-    public EmbeddedServletContainerFactory getEmbeddedServletContainerFactory() {
-        TomcatEmbeddedServletContainerFactory containerFactory = new TomcatEmbeddedServletContainerFactory();
-        containerFactory
-                .addConnectorCustomizers((TomcatConnectorCustomizer) connector -> ((AbstractProtocol) connector.getProtocolHandler())
-                        .setKeepAliveTimeout(5000));
-        return containerFactory;
-    }
 }

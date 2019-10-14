@@ -1,4 +1,4 @@
-package com.chan.study.cloud.demo.util;
+package com.chan.study.cloud.util;
 
 import javax.annotation.Resource;
 import java.util.ArrayList;

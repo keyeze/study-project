@@ -1,6 +1,6 @@
-package com.chan.study.cloud.demo;
+package com.chan.study.cloud;
 
-import com.chan.study.cloud.demo.config.TimeHelperConfig;
+import com.chan.study.cloud.config.TimeHelperConfig;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
@@ -15,7 +15,7 @@ import org.springframework.context.annotation.Import;
  * @author CtChan
  */
 @SpringBootApplication(scanBasePackages = {
-        "com.chan.study.cloud.demo",
+        "com.chan.study.cloud.zuul",
 })
 @Import({
         TimeHelperConfig.class
