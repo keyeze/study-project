@@ -1,4 +1,4 @@
-package com.chan.study.cloud.util;
+package com.chan.study.cloud.demo.util;
 
 import org.springframework.stereotype.Component;
 

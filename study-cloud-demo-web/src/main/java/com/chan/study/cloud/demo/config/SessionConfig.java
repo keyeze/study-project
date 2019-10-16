@@ -1,4 +1,4 @@
-package com.chan.study.cloud.config;
+package com.chan.study.cloud.demo.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.session.data.redis.config.annotation.web.http.EnableRedisHttpSession;

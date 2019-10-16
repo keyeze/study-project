@@ -1,4 +1,4 @@
-package com.chan.study.cloud.util;
+package com.chan.study.cloud.demo.util;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.http.HttpHeaders;

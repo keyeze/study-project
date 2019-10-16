@@ -1,4 +1,4 @@
-package com.chan.study.cloud.service;
+package com.chan.study.cloud.demo.service;
 
 import org.springframework.stereotype.Service;
 

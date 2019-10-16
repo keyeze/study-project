@@ -1,4 +1,4 @@
-package com.chan.study.cloud.web.controller;
+package com.chan.study.cloud.demo.web.controller;
 
 import com.alibaba.fastjson.JSON;
 import lombok.Data;

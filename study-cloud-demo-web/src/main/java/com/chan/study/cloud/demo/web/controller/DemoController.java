@@ -1,6 +1,6 @@
-package com.chan.study.cloud.web.controller;
+package com.chan.study.cloud.demo.web.controller;
 
-import com.chan.study.cloud.util.HttpClientUtil;
+import com.chan.study.cloud.demo.util.HttpClientUtil;
 import org.apache.http.HttpEntity;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.client.methods.HttpUriRequest;

@@ -1,4 +1,4 @@
-package com.chan.study.cloud.util;
+package com.chan.study.cloud.demo.util;
 
 import lombok.extern.slf4j.Slf4j;
 
