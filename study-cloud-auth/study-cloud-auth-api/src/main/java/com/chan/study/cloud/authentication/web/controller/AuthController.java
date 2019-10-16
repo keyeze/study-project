@@ -1,8 +1,7 @@
 package com.chan.study.cloud.authentication.web.controller;
 
 import com.chan.study.cloud.authentication.domain.ChangeRolesReq;
-import com.chan.study.cloud.authentication.domain.LoginSessionDto;
-import com.chan.study.cloud.authentication.domain.VerifyTokenReq;
+import com.chan.study.cloud.authentication.domain.LoginInfo;
 import com.chan.study.cloud.authentication.service.AuthApi;
 import com.chan.study.cloud.authentication.service.AuthService;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -22,8 +21,8 @@ public class AuthController implements AuthApi {
 
     @Override
     @PostMapping("/v2/verify")
-    public LoginSessionDto verifyAndGetUserInfo(@RequestBody VerifyTokenReq verifyToken) {
-        return authService.getUserInfoByToken(verifyToken.getToken());
+    public LoginInfo verifyAndGetUserInfo(@RequestBody String token) {
+        return authService.getUserInfoByToken(token);
     }
 
     @Override

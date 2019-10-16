@@ -7,6 +7,6 @@ spring:
 eureka:
   client:
     service-url:
-      defaultZone: http://peer1:8888/eureka
+      defaultZone: http://peer3:8888/eureka
 server:
   port: 7000

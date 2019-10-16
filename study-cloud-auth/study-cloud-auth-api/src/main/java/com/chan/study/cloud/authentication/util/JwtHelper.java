@@ -30,10 +30,12 @@ public class JwtHelper {
     }
 
     public static String buildToken(String key, Payload payload) {
-        return Jwts.builder().setHeaderParam("type", "jwt")
+        String token = Jwts.builder().setHeaderParam("type", "jwt")
                 .setHeaderParam("alg", "HS512")
                 .setClaims(payload.toJSON())
                 .signWith(SignatureAlgorithm.HS512, generalKey(key)).compact();
+        log.info("将payload[{}]信息生成token[{}]", payload, token);
+        return token;
     }
 
     private static String generalKey(String key) {

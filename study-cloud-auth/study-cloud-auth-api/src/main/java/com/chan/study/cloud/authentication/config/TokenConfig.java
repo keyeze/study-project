@@ -10,7 +10,9 @@ import org.springframework.context.annotation.PropertySource;
 @RefreshScope
 @Data
 @PropertySource("classpath:auth.yml")
-@ConfigurationProperties(prefix = "topmdrt.http.client.config")
+@ConfigurationProperties(prefix = "auth.token")
 public class TokenConfig {
     private String secert;
+
+    private long surviveMs;
 }
