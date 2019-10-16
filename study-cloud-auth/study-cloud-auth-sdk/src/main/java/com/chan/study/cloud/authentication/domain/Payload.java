@@ -7,8 +7,8 @@ import lombok.Data;
 @Data
 public class Payload {
     private String uuid;
-    private long timestamp;
-    private long random;
+    private String timestamp;
+    private String random;
 
     public JSONObject toJSON() {
         return (JSONObject) JSON.toJSON(this);

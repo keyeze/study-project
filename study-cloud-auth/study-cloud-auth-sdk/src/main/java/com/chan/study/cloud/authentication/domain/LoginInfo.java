@@ -9,9 +9,9 @@ import java.util.List;
  * 用户登录态信息
  */
 @Data
-public class LoginSessionDto {
+public class LoginInfo {
     private String uuid;
-    private long birth;
+    private String birth;
     @Dynamic
     private List<String> roles;
 }
