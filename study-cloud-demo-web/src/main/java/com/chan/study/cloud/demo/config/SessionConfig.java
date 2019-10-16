@@ -8,6 +8,6 @@ import org.springframework.session.web.http.HeaderHttpSessionIdResolver;
 public class SessionConfig {
     @Bean
     public HeaderHttpSessionIdResolver httpSessionStrategy() {
-        return new HeaderHttpSessionIdResolver("chan-session");
+        return new HeaderHttpSessionIdResolver("X-GLOBAL-SESSION");
     }
 }

@@ -4,22 +4,34 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 import java.util.Enumeration;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Optional;
 
 @RestController
 public class HelloController {
 
     @RequestMapping("hello")
     public Object test(HttpServletRequest request){
-        Enumeration<String> result = request.getHeaderNames();
         Map<String,Object> map = new HashMap<>();
-        while (result.hasMoreElements()) {
-            String key = result.nextElement();
-            map.put(key,request.getHeader(key));
-        }
-        map.put("test-key",request.getSession().getAttribute("test-key"));
+        Optional.ofNullable(request.getHeaderNames()).ifPresent(item -> {
+            Map<String, Object> temp = new HashMap<>();
+            while (item.hasMoreElements()) {
+                String key = item.nextElement();
+                temp.put(key, request.getHeader(key));
+                map.put("header",temp);
+            }
+        });
+        Optional.ofNullable(request.getSession(false)).map(HttpSession::getAttributeNames).ifPresent(item -> {
+            Map<String, Object> temp = new HashMap<>();
+            while (item.hasMoreElements()) {
+                String key = item.nextElement();
+                temp.put(key, request.getSession().getAttribute(key));
+                map.put("session", temp);
+            }
+        });
         return map;
     }
 }

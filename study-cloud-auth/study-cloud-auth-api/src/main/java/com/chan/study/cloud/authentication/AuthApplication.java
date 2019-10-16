@@ -1,17 +1,20 @@
 package com.chan.study.cloud.authentication;
 
+import com.chan.study.cloud.authentication.config.TokenConfig;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.cloud.openfeign.EnableFeignClients;
+import org.springframework.context.annotation.PropertySource;
 
 @SpringBootApplication
 @EnableDiscoveryClient
 @EnableFeignClients
-@EnableConfigurationProperties
-public class AuthticationApplication {
+@PropertySource("classpath:auth.yml")
+@EnableConfigurationProperties(TokenConfig.class)
+public class AuthApplication {
     public static void main(String[] args) {
-        SpringApplication.run(AuthticationApplication.class, args);
+        SpringApplication.run(AuthApplication.class, args);
     }
 }

@@ -1,4 +1,4 @@
 auth:
   token:
-    secert: test
+    secret: test
     survive_ms: 604800000 # 7天,7*24*60*60*1000

@@ -1,12 +1,14 @@
+eureka:
+  client:
+    service-url:
+      defaultZone: http://peer3:8888/eureka
+  instance:
+      prefer-ip-address: true
+server:
+  port: 7000
 spring:
   application:
     name: auth-center
   redis:
     password: topmdrt!@#$
     host: 172.18.57.145
-eureka:
-  client:
-    service-url:
-      defaultZone: http://peer3:8888/eureka
-server:
-  port: 7000

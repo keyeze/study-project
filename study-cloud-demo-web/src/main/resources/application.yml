@@ -1,6 +1,6 @@
 eureka:
   instance:
-    appname: demo-web
+    prefer-ip-address: true
 spring:
   application:
     name: demo-web
@@ -10,6 +10,5 @@ spring:
       charset: UTF-8
       enabled: true
   redis:
-    host: 10.66.94.117
-    port: 6379
+    host: 172.18.57.145
     password: topmdrt!@#$

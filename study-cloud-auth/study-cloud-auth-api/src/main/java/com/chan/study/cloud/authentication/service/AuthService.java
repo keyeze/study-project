@@ -50,7 +50,7 @@ public class AuthService {
 
     public Payload validAndRefreshToken(String token) {
         //校验 token / 获取 token:payload 信息
-        Payload payload = JwtHelper.getPayload(tokenConfig.getSecert(), token, Payload.class);
+        Payload payload = JwtHelper.getPayload(tokenConfig.getSecret(), token, Payload.class);
         if (!redisTemplate.opsForValue().setIfPresent(payload.toRedisKey(), "true", tokenConfig.getSurviveMs(), TimeUnit.MILLISECONDS)) {
             throw new RuntimeException("登录失效");
         }
@@ -75,7 +75,7 @@ public class AuthService {
 
         }
         //否则重新生成
-        return JwtHelper.buildToken(tokenConfig.getSecert(), payload);
+        return JwtHelper.buildToken(tokenConfig.getSecret(), payload);
 
     }
 }
