@@ -1,4 +1,2 @@
 org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
-com.dafy.composite.commons.springboot.resttemplate.RestTemplateAutoConfiguration,\
-com.dafy.composite.commons.springboot.redis.RedisAutoConfiguration,\
-com.dafy.composite.commons.springboot.feign.FeignRequestMappingConfig
+
