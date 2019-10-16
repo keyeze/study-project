@@ -1,5 +1,6 @@
 package com.chan.study.httpcleint;
 
+import lombok.extern.slf4j.Slf4j;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.config.RequestConfig;
 import org.apache.http.config.Registry;
@@ -14,14 +15,23 @@ import org.apache.http.impl.client.DefaultConnectionKeepAliveStrategy;
 import org.apache.http.impl.client.DefaultHttpRequestRetryHandler;
 import org.apache.http.impl.client.HttpClients;
 import org.apache.http.impl.conn.PoolingHttpClientConnectionManager;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingClass;
+import org.springframework.cloud.client.loadbalancer.LoadBalanced;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.http.client.ClientHttpRequestFactory;
+import org.springframework.http.client.HttpComponentsClientHttpRequestFactory;
+import org.springframework.web.client.RestTemplate;
 
 import javax.annotation.Resource;
 import java.util.concurrent.TimeUnit;
 
+@Slf4j
 @Configuration
 public class HttpClientConfig {
+
     @Resource
     private HttpClientProperties httpClientProperties;
 
@@ -45,7 +55,9 @@ public class HttpClientConfig {
     }
 
     @Bean
+    @ConditionalOnMissingBean
     public RequestConfig requestConfig(){
+        log.info("装载 http-client 对象...");
         return RequestConfig.custom()
                 //请求等待时间
                 .setConnectTimeout(2000)
@@ -66,7 +78,9 @@ public class HttpClientConfig {
      * @return
      */
     @Bean
-    public HttpClient httpClient(PoolingHttpClientConnectionManager httpClientConnectionManager,RequestConfig requestConfig){
+    @ConditionalOnMissingBean
+    public HttpClient  httpClient(PoolingHttpClientConnectionManager httpClientConnectionManager,RequestConfig requestConfig){
+        log.info("装载 http-client 对象...");
         CloseableHttpClient httpClient = HttpClients.custom().setConnectionManager(httpClientConnectionManager)
                 //设置连接池为非共享模式
                 .setConnectionManagerShared(false)
@@ -94,4 +108,25 @@ public class HttpClientConfig {
         }));
         return httpClient;
     }
+
+    @Bean
+    @ConditionalOnMissingClass
+    public HttpComponentsClientHttpRequestFactory requestFactory(HttpClient httpClient) {
+        log.info("装载 request-factory 对象...");
+        // 注入 httpClient 连接配置
+        HttpComponentsClientHttpRequestFactory clientHttpRequestFactory = new HttpComponentsClientHttpRequestFactory(httpClient);
+        clientHttpRequestFactory.setConnectTimeout(httpClientProperties.getConnectTimeout());
+        clientHttpRequestFactory.setReadTimeout(httpClientProperties.getReadTimeout());
+        clientHttpRequestFactory.setConnectionRequestTimeout(httpClientProperties.getConnectionRequestTimeout());
+        return clientHttpRequestFactory;
+    }
+
+    @Bean
+    @LoadBalanced
+    @ConditionalOnClass(ClientHttpRequestFactory.class)
+    public RestTemplate restTemplate(ClientHttpRequestFactory requestFactory){
+        log.info("装载 rest-template 对象...");
+        return new RestTemplate(requestFactory);
+    }
+    //todo CtChan 执行监控线程用于管理线程安全
 }
