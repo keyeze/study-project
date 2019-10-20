@@ -27,9 +27,9 @@ spring:
 zuul:
   routes:
     demo-web:
-      path: /demo2/**
+      path: /demo/**
       strip-prefix: true
-      service-id: DEMO-WEB-2
+      service-id: DEMO-WEB
   set-content-length: true
-#  sensitive-headers: X-GLOBAL-SESSION
+  sensitive-headers: X-GLOBAL-SESSION
   #只开放配置的地址

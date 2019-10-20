@@ -6,7 +6,7 @@ eureka:
     service-url:
       #默认空间defaultZone:
 #      defaultZone: http://eureka-peer1:9980/eureka/,http://peer3:8888/eureka/
-      defaultZone: http://peer3:8888/eureka/
+      defaultZone: http://localhost:9980/eureka/
     #优先使用同zone的服务，默认为true(eureka.instance.metadata-map )
     prefer-same-zone-eureka: true
 #  instance:
