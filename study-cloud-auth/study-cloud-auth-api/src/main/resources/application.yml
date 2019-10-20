@@ -1,7 +1,7 @@
 eureka:
   client:
     service-url:
-      defaultZone: http://peer3:8888/eureka
+      defaultZone: http://localhost:9980/eureka
   instance:
       prefer-ip-address: true
 server:

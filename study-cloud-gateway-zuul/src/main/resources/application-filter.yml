@@ -1,0 +1,25 @@
+zuul:
+  routes:
+    demo-web:
+      path: /demo/**
+      strip-prefix: true
+      service-id: DEMO-WEB
+      filters:
+        - testFilter
+    test:
+      path: /test/**
+      strip-prefix: false
+      service-id: DEMO-WEB
+gateway-filter:
+  routes:
+    authTokenV2Filter:
+      enabled: true
+      include-path:
+        - /**
+      exclude-url:
+        - /test/hello
+    tokenSessionConvertFilter:
+      enabled: true
+      include-path:
+        - /demo/**
+      execlut-url:

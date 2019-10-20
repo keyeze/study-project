@@ -34,4 +34,8 @@ public class HelloController {
         });
         return map;
     }
+    @RequestMapping("test/hello")
+    public Object test2() {
+        return "hello-world";
+    }
 }

@@ -131,6 +131,7 @@
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-compiler-plugin</artifactId>
+                    <version>3.8.1</version>
                     <!--compile 插件 默认只支持ja va 1.3 为了让他支持更高级JDK需要手动写入一下内容-->
                     <configuration>
                         <source>1.8</source>

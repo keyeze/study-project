@@ -2,6 +2,7 @@ package com.chan.study.cloud.zuul.filter;
 
 import com.chan.study.cloud.authentication.consts.TokenConstant;
 import com.chan.study.cloud.authentication.domain.LoginInfo;
+import com.chan.study.cloud.zuul.GatewayFilter;
 import com.chan.study.cloud.zuul.rpc.AuthService;
 import com.netflix.zuul.ZuulFilter;
 import com.netflix.zuul.context.RequestContext;
@@ -26,7 +27,8 @@ import java.util.concurrent.TimeUnit;
  */
 @Slf4j
 @Component
-public class AuthTokenV2Filter extends ZuulFilter {
+public class AuthTokenV2Filter extends GatewayFilter {
+
 
     @Autowired
     private AuthService authService;
@@ -42,12 +44,6 @@ public class AuthTokenV2Filter extends ZuulFilter {
     @Override
     public int filterOrder() {
         return FilterConstants.PRE_DECORATION_FILTER_ORDER + 1;
-    }
-
-    @Override
-    public boolean shouldFilter() {
-        //todo 配置拦截链路
-        return true;
     }
 
     @Override

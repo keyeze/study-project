@@ -3,7 +3,7 @@ eureka:
     prefer-ip-address: true
   client:
     service-url:
-      defaultZone: http://peer3:8888/eureka
+      defaultZone: http://localhost:9980/eureka
     prefer-same-zone-eureka: true
 server:
   port: 9985
@@ -22,14 +22,8 @@ spring:
     port: 6379
   profiles:
     include:
-      - auth
-
+      - filter
 zuul:
-  routes:
-    demo-web:
-      path: /demo/**
-      strip-prefix: true
-      service-id: DEMO-WEB
   set-content-length: true
   sensitive-headers: X-GLOBAL-SESSION
   #只开放配置的地址

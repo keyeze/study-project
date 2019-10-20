@@ -1,11 +1,13 @@
 package com.chan.study.cloud.zuul;
 
+import com.chan.study.cloud.zuul.config.GatewayFilterConfig;
+import com.chan.study.cloud.zuul.config.ZuulExpendProperties;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 import org.springframework.cloud.netflix.zuul.EnableZuulProxy;
-import org.springframework.cloud.netflix.zuul.EnableZuulServer;
 import org.springframework.cloud.openfeign.EnableFeignClients;
 
 /**
@@ -19,6 +21,7 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
 @EnableDiscoveryClient
 @EnableFeignClients
 @EnableZuulProxy
+@EnableConfigurationProperties({ZuulExpendProperties.class, GatewayFilterConfig.class})
 public class ZuulApplication {
     public static void main(String[] args) {
         SpringApplication.run(ZuulApplication.class, args);

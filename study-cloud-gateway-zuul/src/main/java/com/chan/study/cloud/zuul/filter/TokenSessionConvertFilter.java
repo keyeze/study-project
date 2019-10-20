@@ -1,5 +1,6 @@
 package com.chan.study.cloud.zuul.filter;
 
+import com.chan.study.cloud.zuul.GatewayFilter;
 import com.netflix.zuul.ZuulFilter;
 import com.netflix.zuul.context.RequestContext;
 import com.netflix.zuul.exception.ZuulException;
@@ -12,7 +13,7 @@ import javax.servlet.http.HttpServletRequest;
  * LOCAL_SESSION 转 GLOBAL_SESSION 信息
  */
 @Component
-public class TokenSessionConvertFilter extends ZuulFilter {
+public class TokenSessionConvertFilter extends GatewayFilter {
 
     @Override
     public String filterType() {
@@ -22,11 +23,6 @@ public class TokenSessionConvertFilter extends ZuulFilter {
     @Override
     public int filterOrder() {
         return FilterConstants.RIBBON_ROUTING_FILTER_ORDER - 1;
-    }
-
-    @Override
-    public boolean shouldFilter() {
-        return true;
     }
 
     @Override
