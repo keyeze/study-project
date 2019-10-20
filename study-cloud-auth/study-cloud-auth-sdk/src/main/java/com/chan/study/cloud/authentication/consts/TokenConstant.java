@@ -14,6 +14,7 @@ public interface TokenConstant {
     /**
      * session中临时保存的token的key
      */
+    @Deprecated
     String LOCAL_SESSION_KEY = "LOCAL-TEMP-TOKEN";
     /**
      * 本地session存活时间
@@ -25,4 +26,6 @@ public interface TokenConstant {
     String GLOBAL_SESSION_LOGIN_INFO = "AUTH-USER-LOGIN-INFO";
 
     String X_GLOBAL_SESSION_KEY = "X-GLOBAL-SESSION";
+
+    String TOKEN_SESSION_MAPPING_KEY_PREFIX = "TOKEN:SESSION:";
 }

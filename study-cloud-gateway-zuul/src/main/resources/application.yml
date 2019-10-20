@@ -16,16 +16,20 @@ spring:
       charset: UTF-8
       enabled: true
   redis:
-    password: topmdrt!@#$
-    host: 172.18.57.145
+#    password: topmdrt!@#$
+#    host: 172.18.57.145
+    host: localhost
+    port: 6379
+  profiles:
+    include:
+      - auth
 
 zuul:
-#  ignored-patterns: /**
   routes:
     demo-web:
-      path: /demo/**
+      path: /demo2/**
       strip-prefix: true
-      service-id: DEMO-WEB
+      service-id: DEMO-WEB-2
   set-content-length: true
-  sensitive-headers: X-GLOBAL-SESSION
+#  sensitive-headers: X-GLOBAL-SESSION
   #只开放配置的地址

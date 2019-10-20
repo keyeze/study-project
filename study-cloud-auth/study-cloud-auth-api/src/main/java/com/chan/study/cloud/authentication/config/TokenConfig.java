@@ -5,6 +5,9 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
 
+/**
+ * @author CtChan
+ */
 @Configuration
 @PropertySource("classpath:/auth.properties")
 @ConfigurationProperties(prefix = "auth.token")

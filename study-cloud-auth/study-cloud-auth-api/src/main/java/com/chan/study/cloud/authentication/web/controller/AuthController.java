@@ -4,9 +4,16 @@ import com.chan.study.cloud.authentication.domain.ChangeRolesReq;
 import com.chan.study.cloud.authentication.domain.LoginInfo;
 import com.chan.study.cloud.authentication.service.AuthApi;
 import com.chan.study.cloud.authentication.service.AuthService;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.context.request.RequestContextHolder;
+import org.springframework.web.context.request.ServletRequestAttributes;
 
 import javax.annotation.Resource;
+import javax.servlet.http.HttpServletRequest;
 
 /**
  * 鉴权中心接口

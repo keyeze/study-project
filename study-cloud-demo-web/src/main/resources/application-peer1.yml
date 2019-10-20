@@ -9,6 +9,6 @@ eureka:
       defaultZone: http://peer3:8888/eureka/
     #优先使用同zone的服务，默认为true(eureka.instance.metadata-map )
     prefer-same-zone-eureka: true
-  instance:
+#  instance:
     #用来表示，现在服务所在的zone，（会优先调用相同zone的服务）
 #    metadata-map:

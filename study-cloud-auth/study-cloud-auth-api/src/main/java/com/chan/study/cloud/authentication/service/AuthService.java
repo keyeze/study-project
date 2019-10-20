@@ -4,6 +4,7 @@ import com.chan.study.cloud.authentication.config.TokenConfig;
 import com.chan.study.cloud.authentication.domain.LoginInfo;
 import com.chan.study.cloud.authentication.util.JwtHelper;
 import lombok.Data;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Service;
@@ -12,6 +13,7 @@ import java.util.List;
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
+@Slf4j
 @Service
 public class AuthService {
     @Autowired
@@ -37,7 +39,7 @@ public class AuthService {
     }
 
     @Data
-    private class Payload extends com.chan.study.cloud.authentication.domain.Payload {
+    private static class Payload extends com.chan.study.cloud.authentication.domain.Payload {
         String toRedisKey() {
             return "auth:token:" + getUuid() + ":" + getTimestamp() + ":" + getRandom();
         }
@@ -68,12 +70,13 @@ public class AuthService {
         Set<String> keys = redisTemplate.keys(payload.toRedisKeysOfUuid());
         if (keys != null) {
             keys.stream().filter(item -> item.matches("auth:token:\\w+:\\d+:\\d+")).findFirst().ifPresent(item -> {
+                log.info("uuid已有登录态,取登录态,{}", item);
                 String[] temp = item.split(":");
                 payload.setTimestamp(temp[3]);
                 payload.setRandom(temp[4]);
             });
-
         }
+        redisTemplate.opsForValue().set(payload.toRedisKey(), "true", tokenConfig.getSurviveMs(), TimeUnit.MILLISECONDS);
         //否则重新生成
         return JwtHelper.buildToken(tokenConfig.getSecret(), payload);
 
