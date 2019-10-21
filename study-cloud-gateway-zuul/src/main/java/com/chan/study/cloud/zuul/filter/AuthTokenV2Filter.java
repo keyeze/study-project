@@ -1,16 +1,18 @@
 package com.chan.study.cloud.zuul.filter;
 
 import com.chan.study.cloud.authentication.consts.TokenConstant;
+import com.chan.study.cloud.authentication.domain.BusinessSessionInfo;
 import com.chan.study.cloud.authentication.domain.LoginInfo;
-import com.chan.study.cloud.zuul.GatewayFilter;
+import com.chan.study.cloud.zuul.InfoBean;
+import com.chan.study.cloud.zuul.consts.BusinessMainSessionKey;
 import com.chan.study.cloud.zuul.rpc.AuthService;
-import com.netflix.zuul.ZuulFilter;
 import com.netflix.zuul.context.RequestContext;
 import com.netflix.zuul.exception.ZuulException;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.netflix.zuul.filters.support.FilterConstants;
 import org.springframework.data.redis.core.RedisTemplate;
+import org.springframework.session.SessionRepository;
 import org.springframework.stereotype.Component;
 import org.springframework.util.ObjectUtils;
 
@@ -80,6 +82,9 @@ public class AuthTokenV2Filter extends GatewayFilter {
         localSession.setAttribute(TokenConstant.GLOBAL_SESSION_ROLES, Optional.of(loginInfo).map(LoginInfo::getRoles).orElse(Collections.emptyList()));
         localSession.setAttribute(TokenConstant.GLOBAL_SESSION_LOGIN_INFO, loginInfo);
         localSession.setMaxInactiveInterval(TokenConstant.LOCAL_SESSION_LIVE_TIME);
+        InfoBean temp = new InfoBean();
+        temp.setTest("stts");
+        Optional.of(BusinessMainSessionKey.AGENT_SESSION).filter(it -> localSession.getAttribute(it) == null).ifPresent(it -> localSession.setAttribute(it, temp));
         RequestContext.getCurrentContext().addZuulRequestHeader(TokenConstant.X_GLOBAL_SESSION_KEY, localSession.getId());
     }
 

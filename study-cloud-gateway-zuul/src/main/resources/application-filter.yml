@@ -3,11 +3,14 @@ zuul:
     demo-web:
       path: /demo/**
       strip-prefix: true
-      service-id: DEMO-WEB
       filters:
         - testFilter
     test:
       path: /test/**
+      strip-prefix: false
+      service-id: DEMO-WEB
+    test3:
+      path: /test3/**
       strip-prefix: false
       service-id: DEMO-WEB
 gateway-filter:
@@ -18,8 +21,7 @@ gateway-filter:
         - /**
       exclude-url:
         - /test/hello
-    tokenSessionConvertFilter:
+    tokenToSessionOfYZBFConvertFilter:
       enabled: true
       include-path:
-        - /demo/**
-      execlut-url:
+        - /test3/**

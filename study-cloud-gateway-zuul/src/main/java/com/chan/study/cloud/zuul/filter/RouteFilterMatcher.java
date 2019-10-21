@@ -1,6 +1,5 @@
 package com.chan.study.cloud.zuul.filter;
 
-import com.chan.study.cloud.zuul.GatewayFilter;
 import com.chan.study.cloud.zuul.config.GatewayFilterConfig;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;

@@ -1,5 +1,7 @@
 package com.chan.study.cloud.demo.web.controller;
 
+import com.chan.study.cloud.authentication.consts.TokenConstant;
+import jdk.nashorn.internal.parser.Token;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -37,5 +39,10 @@ public class HelloController {
     @RequestMapping("test/hello")
     public Object test2() {
         return "hello-world";
+    }
+    @RequestMapping("test3/hello")
+    public Object test3(HttpServletRequest request) {
+        InfoBean info = (InfoBean)request.getSession().getAttribute("AGENT_SESSION");
+        return info.getTest();
     }
 }

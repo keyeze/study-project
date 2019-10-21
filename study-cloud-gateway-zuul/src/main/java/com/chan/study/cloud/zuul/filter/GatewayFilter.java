@@ -1,4 +1,4 @@
-package com.chan.study.cloud.zuul;
+package com.chan.study.cloud.zuul.filter;
 
 import com.chan.study.cloud.zuul.filter.RouteFilterMatcher;
 import com.netflix.zuul.ZuulFilter;
